@@ -1,117 +1,173 @@
-import { Briefcase, GraduationCap, FileText } from "lucide-react";
+import { Briefcase, GraduationCap, FileText, Calendar } from "lucide-react";
+import { motion } from "framer-motion";
+
+const timelineItems = [
+  {
+    type: "work",
+    icon: Briefcase,
+    title: "Mobile App Developer",
+    subtitle: "Code Facts IT Solutions Pvt Ltd, Hyderabad",
+    date: "Apr 2024 – Present",
+    color: "primary",
+    points: [
+      "Developed and shipped 4+ full-scale cross-platform mobile apps on Play Store & App Store using React Native & Node.js",
+      "Integrated Razorpay, Firebase (Auth, Firestore, Cloud Messaging), Google Maps API for payments, real-time notifications, and geolocation",
+      "Designed RESTful APIs for product listings, job postings, order management; optimized MongoDB queries for performance",
+      "Collaborated in Agile sprints with designers and backend team; ensured 100% app reliability through rigorous testing",
+    ],
+  },
+  {
+    type: "education",
+    icon: GraduationCap,
+    title: "B.E. in Electronics and Communication Engineering",
+    subtitle: "Hindusthan Institute of Technology / Anna University",
+    date: "2019 – 2023",
+    color: "accent",
+    extra: "CGPA: 8.75/10",
+  },
+  {
+    type: "publication",
+    icon: FileText,
+    title: "Research Publication",
+    subtitle: "International Journal of Engineering Research & Technology (IJERT)",
+    date: "Apr 2023",
+    color: "primary",
+    extra: '"Design and Implementation of IoT-based Floor Cleaning Robot for Healthy Environment"',
+  },
+];
 
 const ExperienceSection = () => {
   return (
-    <section id="experience" className="py-20 relative overflow-hidden">
-      <div className="absolute top-1/2 left-0 w-72 h-72 bg-primary/5 rounded-full blur-3xl -translate-y-1/2" />
+    <section id="experience" className="py-24 relative overflow-hidden">
+      {/* Background */}
+      <div className="absolute top-1/4 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 right-0 w-80 h-80 bg-accent/5 rounded-full blur-3xl" />
 
       <div className="container mx-auto px-4 relative">
-        <div className="text-center mb-16">
-          <p className="text-primary font-semibold mb-2">EXPERIENCE</p>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <span className="inline-block px-4 py-1 bg-primary/10 text-primary font-semibold text-sm rounded-full mb-4">
+            EXPERIENCE
+          </span>
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground">
-            My Professional Journey
+            My Professional <span className="text-gradient">Journey</span>
           </h2>
-        </div>
+        </motion.div>
 
-        <div className="max-w-4xl mx-auto space-y-8">
-          {/* Work Experience */}
-          <div className="bg-card rounded-2xl p-8 shadow-soft border border-border">
-            <div className="flex items-start gap-4">
-              <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                <Briefcase className="w-7 h-7 text-primary" />
-              </div>
-              
-              <div className="flex-1">
-                <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-                  <h3 className="text-xl font-bold text-foreground">
-                    Mobile App Developer
-                  </h3>
-                  <span className="px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-lg">
-                    Apr 2024 – Present
-                  </span>
+        {/* Timeline */}
+        <div className="max-w-4xl mx-auto relative">
+          {/* Timeline Line */}
+          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-accent to-primary/20" />
+
+          {timelineItems.map((item, index) => (
+            <motion.div
+              key={item.title}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              className={`relative flex items-start gap-8 mb-12 ${
+                index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+              }`}
+            >
+              {/* Timeline Node */}
+              <motion.div
+                className={`absolute left-8 md:left-1/2 -translate-x-1/2 z-10`}
+                whileHover={{ scale: 1.2 }}
+              >
+                <div
+                  className={`w-16 h-16 rounded-2xl flex items-center justify-center shadow-card ${
+                    item.color === "primary"
+                      ? "bg-gradient-to-br from-primary to-primary/80"
+                      : "bg-gradient-to-br from-accent to-accent/80"
+                  }`}
+                >
+                  <item.icon className="w-7 h-7 text-primary-foreground" />
                 </div>
-                
-                <p className="text-primary font-medium mb-4">
-                  Code Facts IT Solutions Pvt Ltd, Hyderabad
-                </p>
+              </motion.div>
 
-                <ul className="space-y-3 text-muted-foreground">
-                  <li className="flex items-start gap-2">
-                    <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
-                    Developed and shipped 4+ full-scale cross-platform mobile apps on Play Store & App Store using React Native & Node.js
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
-                    Integrated Razorpay, Firebase (Auth, Firestore, Cloud Messaging), Google Maps API for payments, real-time notifications, and geolocation
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
-                    Designed RESTful APIs for product listings, job postings, order management; optimized MongoDB queries for performance
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
-                    Collaborated in Agile sprints with designers and backend team; ensured 100% app reliability through rigorous testing
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+              {/* Content Card */}
+              <div
+                className={`flex-1 ml-24 md:ml-0 ${
+                  index % 2 === 0 ? "md:pr-16 md:text-right" : "md:pl-16"
+                }`}
+              >
+                <motion.div
+                  whileHover={{ y: -5 }}
+                  className="bg-card rounded-3xl p-6 md:p-8 shadow-soft hover:shadow-card transition-all duration-300 border border-border"
+                >
+                  {/* Date Badge */}
+                  <motion.div
+                    className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-medium mb-4 ${
+                      item.color === "primary"
+                        ? "bg-primary/10 text-primary"
+                        : "bg-accent/10 text-accent"
+                    }`}
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <Calendar className="w-3.5 h-3.5" />
+                    {item.date}
+                  </motion.div>
 
-          {/* Education */}
-          <div className="bg-card rounded-2xl p-8 shadow-soft border border-border">
-            <div className="flex items-start gap-4">
-              <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                <GraduationCap className="w-7 h-7 text-accent" />
-              </div>
-              
-              <div className="flex-1">
-                <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-                  <h3 className="text-xl font-bold text-foreground">
-                    B.E. in Electronics and Communication Engineering
+                  <h3 className="text-xl font-bold text-foreground mb-2">
+                    {item.title}
                   </h3>
-                  <span className="px-3 py-1 bg-accent/10 text-accent text-sm font-medium rounded-lg">
-                    2019 – 2023
-                  </span>
-                </div>
-                
-                <p className="text-accent font-medium mb-2">
-                  Hindusthan Institute of Technology / Anna University
-                </p>
-                
-                <p className="text-muted-foreground">
-                  CGPA: <span className="font-semibold text-foreground">8.75/10</span>
-                </p>
-              </div>
-            </div>
-          </div>
 
-          {/* Publication */}
-          <div className="bg-card rounded-2xl p-8 shadow-soft border border-border">
-            <div className="flex items-start gap-4">
-              <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                <FileText className="w-7 h-7 text-primary" />
+                  <p
+                    className={`font-medium mb-4 ${
+                      item.color === "primary" ? "text-primary" : "text-accent"
+                    }`}
+                  >
+                    {item.subtitle}
+                  </p>
+
+                  {item.points && (
+                    <ul
+                      className={`space-y-3 text-muted-foreground text-sm ${
+                        index % 2 === 0 ? "md:text-right" : ""
+                      }`}
+                    >
+                      {item.points.map((point, pIndex) => (
+                        <motion.li
+                          key={pIndex}
+                          initial={{ opacity: 0 }}
+                          whileInView={{ opacity: 1 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: index * 0.2 + pIndex * 0.1 }}
+                          className={`flex items-start gap-2 ${
+                            index % 2 === 0 ? "md:flex-row-reverse" : ""
+                          }`}
+                        >
+                          <span
+                            className={`w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0 ${
+                              item.color === "primary"
+                                ? "bg-primary"
+                                : "bg-accent"
+                            }`}
+                          />
+                          <span>{point}</span>
+                        </motion.li>
+                      ))}
+                    </ul>
+                  )}
+
+                  {item.extra && (
+                    <p
+                      className={`text-muted-foreground ${
+                        item.type === "publication" ? "italic" : "font-semibold"
+                      }`}
+                    >
+                      {item.extra}
+                    </p>
+                  )}
+                </motion.div>
               </div>
-              
-              <div className="flex-1">
-                <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-                  <h3 className="text-xl font-bold text-foreground">
-                    Research Publication
-                  </h3>
-                  <span className="px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-lg">
-                    Apr 2023
-                  </span>
-                </div>
-                
-                <p className="text-primary font-medium mb-2">
-                  International Journal of Engineering Research & Technology (IJERT)
-                </p>
-                
-                <p className="text-muted-foreground italic">
-                  "Design and Implementation of IoT-based Floor Cleaning Robot for Healthy Environment"
-                </p>
-              </div>
-            </div>
-          </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
