@@ -141,7 +141,7 @@ const AboutSection = () => {
   end-to-end digital products across mobile, web, and backend systems.
   Over the last 2+ years at Code Facts IT Solutions, I’ve designed,
   developed, and shipped 6+ production-grade applications used in
-  real-world environments on Android, iOS, and the web.
+  real-world environments on Android, iOS.
 </p>
 
 

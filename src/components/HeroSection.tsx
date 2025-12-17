@@ -5,11 +5,8 @@ import { useEffect, useState } from "react";
 import profilePhoto from "@/assets/profile-photo.png";
 
 const roles = [
-   "Full-Stack Developer",
-  "Mobile Developer",
-  "Website Developer",
-  "Backend Developer",
- 
+  
+  "Mobile Developer", 
 ];
 
 const HeroSection = () => {
@@ -126,9 +123,9 @@ const [showComingSoon, setShowComingSoon] = useState(false);
   transition={{ duration: 0.6, delay: 0.5 }}
   className="text-muted-foreground text-lg max-w-lg leading-relaxed"
 >
-  I build end-to-end digital products across mobile, web, and backend —
-  delivering scalable applications from concept to production on the Play Store,
-  App Store, and web.
+I build end-to-end mobile applications with a solid understanding of backend
+systems, delivering scalable products from concept to production on the
+Play Store, App Store.
 </motion.p>
 
 

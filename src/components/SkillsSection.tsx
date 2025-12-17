@@ -28,6 +28,8 @@ const skills = [
     category: "Backend Development & APIs",
     icon: Server,
     items: [
+      
+      ".Net",
       "Node.js",
       "Express.js",
       "RESTful API Design",

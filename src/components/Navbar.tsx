@@ -54,7 +54,7 @@ const Navbar = () => {
             className="text-xl font-bold text-foreground"
             whileHover={{ scale: 1.05 }}
           >
-            <span className="text-gradient">MalliKarjuna Rao</span>
+            <span className="text-gradient">Mallikarjuna Rao</span>
             {/* <span className="text-foreground gap-3">Developer</span> */}
           </motion.a>
 

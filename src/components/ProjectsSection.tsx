@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const projects = [
   {
-    name: "Tech Mate",
+    name: "Techmate",
     description:
       "A full-scale service marketplace platform connecting freelancers, businesses, and consumers, built from ideation to production deployment.",
     role: "Mobile & Backend Developer",
@@ -28,7 +28,7 @@ const projects = [
     name: "RntOut",
     description:
       "Multi-category rental marketplace for furniture, vehicles, and real estate with real-time availability and dynamic pricing.",
-    role: "Mobile & Backend Developer",
+    role: "Mobile Developer",
     tech: [
       "React Native",
       "Node.js",
@@ -118,7 +118,7 @@ const projects = [
     name: "First House",
     description:
       "Real estate platform for listing properties, client interaction, and real-time chat.",
-    role: "Mobile & Web Module Developer",
+    role: "Mobile Developer",
     tech: ["React (TypeScript)", ".NET", "MongoDB", "Firebase", "Swagger"],
     highlights: [
       "Property listing & inquiry modules",
@@ -160,7 +160,7 @@ const projects = [
     name: "Luxorace",
     description:
       "Fashion commerce platform for sarees and traditional wear with seller onboarding and inventory management.",
-    role: "Mobile, Backend & Seller Module Developer",
+    role: "Mobile Developer",
     tech: ["React Native", "Node.js", "MongoDB", "Firebase", "Razorpay"],
     highlights: [
       "Seller onboarding & product catalog management",
