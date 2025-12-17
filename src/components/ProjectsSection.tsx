@@ -1,4 +1,4 @@
-import { ExternalLink, Smartphone } from "lucide-react";
+import { ExternalLink, Smartphone,Apple,PlayCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -17,7 +17,12 @@ const projects = [
     ],
     color: "primary",
     platform: "mobile",
-    link: "https://techmate.com",
+   links: {
+      website: "https://techmateservices.in/",
+      playStore: "https://play.google.com/store/apps/details?id=com.techlink",
+      appStore: "https://apps.apple.com/in/app/techmate-t-link-solutions/id6753174737",
+    },
+
   },
   {
     name: "RntOut",
@@ -39,7 +44,13 @@ const projects = [
     ],
     color: "accent",
     platform: "mobile",
-    link: "https://rntout.com",
+    // link: "https://rntout.com",
+    links: {
+      website: "https://rntout.com/",
+      playStore: "https://play.google.com/store",
+      appStore: "https://apps.apple.com/in/app/rntout/id6743694042",
+    },
+
   },
   {
     name: "Gobooze",
@@ -54,7 +65,12 @@ const projects = [
     ],
     color: "primary",
     platform: "mobile",
-    link: "https://gobooze.com.au",
+    links: {
+      website: "https://gobooze.com.au/",
+      playStore: "https://play.google.com/store/apps/details?id=com.goboozeuserapp",
+      appStore: "https://apps.apple.com/in/app/gobooze/id6739266630",
+    },
+
   },
   
   {
@@ -70,7 +86,12 @@ const projects = [
     ],
     color: "accent",
     platform: "mobile",
-    link: "https://bodegaa.com",
+    links: {
+      website: "https://bodegaa.in/",
+      playStore: "https://play.google.com/store/apps/details?id=com.bodegaa",
+      appStore: "https://apps.apple.com/in/app/bodegaa/id6754384209",
+    },
+
   },
   {
     name: "SriRudra",
@@ -85,7 +106,13 @@ const projects = [
     ],
     color: "primary",
     platform: "mobile",
-    link: "https://srirudra.com",
+    // link: "https://srirudra.com",
+    links: {
+      website: "https://srirudra-dev.codefactstech.com/",
+      playStore: "https://play.google.com/store/apps/details?id=com.sriRudra",
+      appStore: "https://apps.apple.com/in/app/srirudra/id6736977526",
+    },
+
   },
   {
     name: "First House",
@@ -100,7 +127,13 @@ const projects = [
     ],
     color: "accent",
     platform: "mobile",
-    link: "",
+    // link: "",
+    links: {
+      website: "",
+      playStore: "https://play.google.com/store/apps/details?id=com.Firsthouse",
+      appStore: "https://apps.apple.com/in/app/first-house-app/id6751951958",
+    },
+
   },
   {
     name: "GoChauffeur",
@@ -115,7 +148,13 @@ const projects = [
     ],
     color: "primary",
     platform: "mobile",
-    link: "",
+    // link: "",
+    links: {
+      website: "",
+      playStore: "https://play.google.com/store/apps/details?id=com.varaahipspl.gochauffeur&pli=1",
+      appStore: "",
+    },
+
   },
   {
     name: "Luxorace",
@@ -130,7 +169,12 @@ const projects = [
     ],
     color: "accent",
     platform: "mobile",
-    link: "",
+    links: {
+      website: "https://ethnic-hues.com/",
+      playStore: "https://play.google.com/store/apps/details?id=com.luxorace",
+      appStore: "https://apps.apple.com/in/app/luxorace/id6753107382",
+    },
+
   },
 {
     name: "Garuda Gases",
@@ -145,7 +189,12 @@ const projects = [
     ],
     color: "primary",
     platform: "mobile",
-    link: "",
+    links: {
+      website: "",
+      playStore: "https://play.google.com/store/apps/details?id=com.garudagas",
+      appStore: "https://apps.apple.com/in/app/garuda-gases/id6753621877",
+    },
+
   },
 
 ];
@@ -253,30 +302,71 @@ const ProjectsSection = () => {
                     </p>
                   </div>
 
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    animate={{
-                      opacity: hoveredIndex === index ? 1 : 0,
-                      scale: hoveredIndex === index ? 1 : 0.5,
-                    }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <Button
-                      asChild
-                      variant="ghost"
-                      size="icon"
-                      className="rounded-xl"
-                    >
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`${project.name} website`}
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                      </a>
-                    </Button>
-                  </motion.div>
+                 <motion.div
+  initial={{ opacity: 0, scale: 0.5 }}
+  animate={{
+    opacity: hoveredIndex === index ? 1 : 0,
+    scale: hoveredIndex === index ? 1 : 0.5,
+  }}
+  transition={{ duration: 0.2 }}
+  className="flex gap-1"
+>
+  {/* Play Store */}
+  {project.links?.playStore && (
+    <Button asChild variant="ghost" size="icon">
+      <a
+        href={project.links.playStore}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="View on Play Store"
+      >
+        <img
+          src="/icons/playstore.png"
+          alt="Play Store"
+          className="w-6 h-6 object-contain"
+        />
+      </a>
+    </Button>
+  )}
+
+  {/* App Store */}
+  {project.links?.appStore && (
+    <Button asChild variant="ghost" size="icon">
+      <a
+        href={project.links.appStore}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="View on App Store"
+      >
+        <img
+          src="/icons/appstore.png"
+          alt="App Store"
+          className="w-6 h-6 object-contain"
+        />
+      </a>
+    </Button>
+  )}
+
+  {/* Website */}
+  {project.links?.website && (
+    <Button asChild variant="ghost" size="icon">
+      <a
+        href={project.links.website}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Visit Website"
+      >
+        <img
+          src="/icons/chrome.png"
+          alt="Website"
+          className="w-6 h-6 object-contain"
+        />
+      </a>
+    </Button>
+  )}
+</motion.div>
+
+
                 </div>
               </div>
 
