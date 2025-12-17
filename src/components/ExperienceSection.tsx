@@ -3,19 +3,23 @@ import { motion } from "framer-motion";
 
 const timelineItems = [
   {
-    type: "work",
-    icon: Briefcase,
-    title: "Mobile App Developer",
-    subtitle: "Code Facts IT Solutions Pvt Ltd, Hyderabad",
-    date: "Apr 2024 – Present",
-    color: "primary",
-    points: [
-      "Developed and shipped 4+ full-scale cross-platform mobile apps on Play Store & App Store using React Native & Node.js",
-      "Integrated Razorpay, Firebase (Auth, Firestore, Cloud Messaging), Google Maps API for payments, real-time notifications, and geolocation",
-      "Designed RESTful APIs for product listings, job postings, order management; optimized MongoDB queries for performance",
-      "Collaborated in Agile sprints with designers and backend team; ensured 100% app reliability through rigorous testing",
-    ],
-  },
+  type: "work",
+  icon: Briefcase,
+  title: "Software Engineer (Mobile & Backend)",
+  subtitle: "Code Facts IT Solutions Pvt. Ltd., Hyderabad",
+  date: "Sep 2023 – Present",
+  color: "primary",
+  points: [
+    "Designed, developed, and deployed 6+ production-grade mobile applications for Android and iOS using React Native, now live on Play Store and App Store",
+    "Owned end-to-end feature development including UI implementation, backend API design (Node.js, Express), database modeling (MongoDB), and deployment",
+    "Integrated Razorpay and Stripe payment gateways, Firebase Authentication, Firestore, Cloud Messaging, deep linking, and real-time GPS tracking for service and delivery-based apps",
+    "Built and maintained scalable RESTful APIs with secure authentication, clean architecture, and Swagger-based documentation",
+    "Improved API performance by up to 40% through query optimization, response caching, and efficient backend logic",
+    "Collaborated with UI/UX designers, QA engineers, and product managers in Agile sprints to translate business requirements into stable, high-quality releases",
+    "Participated in code reviews, optimized application reliability, and ensured smooth release cycles across multiple platforms",
+    "Mentored junior developers, shared best practices, and helped maintain consistent coding standards across the team"
+  ],
+},
   {
     type: "education",
     icon: GraduationCap,

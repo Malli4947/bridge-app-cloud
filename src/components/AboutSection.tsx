@@ -136,18 +136,24 @@ const AboutSection = () => {
               </h2>
             </div>
 
-            <p className="text-muted-foreground text-lg leading-relaxed">
-              I'm a mobile app and backend developer based in Hyderabad. Over the
-              past 2 years at Code Facts IT Solutions, I've built and shipped 6+
-              production-grade cross-platform apps for Android and iOS.
-            </p>
+           <p className="text-muted-foreground text-lg leading-relaxed">
+  I’m a Software Engineer based in Hyderabad, specializing in building
+  end-to-end digital products across mobile, web, and backend systems.
+  Over the last 2+ years at Code Facts IT Solutions, I’ve designed,
+  developed, and shipped 6+ production-grade applications used in
+  real-world environments on Android, iOS, and the web.
+</p>
 
-            <p className="text-muted-foreground leading-relaxed">
-              My work involves integrating payment gateways (Razorpay, Stripe),
-              real-time features (Firebase, geolocation), and performance
-              optimizations. I believe in writing clean, modular code and
-              delivering smooth user experiences.
-            </p>
+
+           <p className="text-muted-foreground leading-relaxed">
+  My work spans across mobile app development with React Native,
+  backend API development using Node.js and .NET, and supporting web
+  modules for admin and business workflows. I routinely integrate
+  secure payment gateways like Razorpay and Stripe, implement
+  real-time systems with Firebase and geolocation services, and focus
+  heavily on performance, reliability, and scalability.
+</p>
+
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -156,11 +162,13 @@ const AboutSection = () => {
               transition={{ delay: 0.3 }}
               className="p-6 bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl border border-primary/20"
             >
-              <p className="text-foreground font-medium italic">
-                "Think of me as the bridge between the app in your hand and the
-                data in the cloud. I design, develop, and deploy full-stack
-                solutions that feel smooth, respond fast, and scale easily."
-              </p>
+            <p className="text-foreground font-medium italic">
+  "I see engineering as the bridge between intuitive user experiences
+  and reliable backend systems. My goal is to build products that feel
+  smooth on the surface, stay solid behind the scenes, and scale
+  effortlessly as they grow."
+</p>
+
             </motion.div>
 
             <motion.p

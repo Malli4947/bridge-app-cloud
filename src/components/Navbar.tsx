@@ -54,8 +54,8 @@ const Navbar = () => {
             className="text-xl font-bold text-foreground"
             whileHover={{ scale: 1.05 }}
           >
-            <span className="text-gradient">Malli</span>
-            <span className="text-foreground">.dev</span>
+            <span className="text-gradient">MalliKarjuna Rao</span>
+            {/* <span className="text-foreground gap-3">Developer</span> */}
           </motion.a>
 
           {/* Desktop Navigation */}
@@ -88,10 +88,16 @@ const Navbar = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Button variant="hero" size="default">
-              <Download className="w-4 h-4" />
-              Download CV
-            </Button>
+           <a
+  href="/MalliKarjuna_Rao_Resume.pdf"
+  download="MalliKarjuna_Rao_Resume.pdf"
+>
+  <Button variant="hero" size="default">
+    <Download className="w-4 h-4" />
+    Download CV
+  </Button>
+</a>
+
           </motion.div>
 
           {/* Mobile Menu Button */}
@@ -160,10 +166,16 @@ const Navbar = () => {
                   transition={{ delay: 0.3 }}
                   className="mt-2"
                 >
-                  <Button variant="hero" className="w-full">
+                 
+                    <a
+  href="/MalliKarjuna_Rao_Resume.pdf"
+  download="MalliKarjuna_Rao_Resume.pdf"
+>
+   <Button variant="hero" className="w-full">
                     <Download className="w-4 h-4" />
                     Download CV
                   </Button>
+</a>
                 </motion.div>
               </div>
             </motion.div>

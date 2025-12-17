@@ -1,19 +1,22 @@
 import { ArrowDown, Play, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
+import { motion,AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import profilePhoto from "@/assets/profile-photo.png";
 
 const roles = [
-  "React Native Developer",
-  "Node.js Backend Developer",
-  "Full-Stack Problem Solver",
+   "Full-Stack Developer",
+  "Mobile Developer",
+  "Website Developer",
+  "Backend Developer",
+ 
 ];
 
 const HeroSection = () => {
   const [roleIndex, setRoleIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
+const [showComingSoon, setShowComingSoon] = useState(false);
 
   useEffect(() => {
     const currentRole = roles[roleIndex];
@@ -89,7 +92,7 @@ const HeroSection = () => {
               >
                 <Sparkles className="w-4 h-4 text-primary" />
                 <span className="text-primary font-medium text-sm">
-                  Available for new projects
+                  Available for freelancer or new projects.
                 </span>
               </motion.div>
 
@@ -117,15 +120,17 @@ const HeroSection = () => {
               </motion.div>
             </motion.div>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="text-muted-foreground text-lg max-w-lg leading-relaxed"
-            >
-              I build scalable cross-platform mobile apps connected to robust APIs — 
-              shipping products from idea to Play Store & App Store.
-            </motion.p>
+<motion.p
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6, delay: 0.5 }}
+  className="text-muted-foreground text-lg max-w-lg leading-relaxed"
+>
+  I build end-to-end digital products across mobile, web, and backend —
+  delivering scalable applications from concept to production on the Play Store,
+  App Store, and web.
+</motion.p>
+
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -144,12 +149,55 @@ const HeroSection = () => {
                   </motion.span>
                 </a>
               </Button>
-              <Button variant="heroOutline" size="lg" className="group">
+             <Button
+                variant="heroOutline"
+                size="lg"
+                className="group"
+                onClick={() => setShowComingSoon(true)}
+              >
                 <Play className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 Watch Intro
               </Button>
-            </motion.div>
 
+            </motion.div>
+<AnimatePresence>
+  {showComingSoon && (
+    <motion.div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      onClick={() => setShowComingSoon(false)}
+    >
+      <motion.div
+        initial={{ scale: 0.9, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0.9, opacity: 0 }}
+        transition={{ type: "spring", stiffness: 260, damping: 20 }}
+        className="bg-card rounded-2xl p-8 shadow-2xl text-center w-[90%] max-w-sm"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <Play className="w-10 h-10 text-primary mx-auto mb-4" />
+
+        <h3 className="text-2xl font-bold mb-2">
+          Intro Coming Soon
+        </h3>
+
+        <p className="text-muted-foreground mb-6">
+          A short introduction video is on the way. Stay tuned!
+        </p>
+
+        <Button
+          variant="hero"
+          className="w-full"
+          onClick={() => setShowComingSoon(false)}
+        >
+          Got it
+        </Button>
+      </motion.div>
+    </motion.div>
+  )}
+</AnimatePresence>
             {/* Stats */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -219,13 +267,19 @@ const HeroSection = () => {
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-card shadow-glow-lg gradient-border">
-                <img
-                  src={profilePhoto}
-                  alt="Mallikarjuna Rao - Full Stack Developer"
-                  className="w-full h-full object-cover"
-                />
-              </div>
+              <div className="w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-card shadow-glow-lg gradient-border flex items-center justify-center bg-muted">
+  <img
+    src="/image.jpg"
+    alt="Mallikarjuna Rao – Full Stack Developer"
+    className="w-full h-full object-cover object-center"
+  />
+</div>
+
+
+
+
+  
+
 
               {/* Experience Badge */}
               <motion.div

@@ -10,48 +10,83 @@ import { motion } from "framer-motion";
 
 const skills = [
   {
-    category: "Mobile / Frontend",
+    category: "Mobile & Frontend Development",
     icon: Smartphone,
-    items: ["React Native", "Styled Components", "Context API", "Redux"],
+    items: [
+      "React Native",
+      "React.js",
+      "TypeScript (TS / TSX)",
+      "Styled Components",
+      "Context API",
+      "Redux",
+      "Responsive UI Design",
+    ],
     color: "primary",
     gradient: "from-primary/20 to-primary/5",
   },
   {
-    category: "Backend / APIs",
+    category: "Backend Development & APIs",
     icon: Server,
-    items: ["Node.js", "Express.js", "REST APIs", "GraphQL (Learning)"],
+    items: [
+      "Node.js",
+      "Express.js",
+      "RESTful API Design",
+      "API Documentation (Swagger)",
+    ],
     color: "accent",
     gradient: "from-accent/20 to-accent/5",
   },
   {
-    category: "Databases & Storage",
+    category: "Databases & Data Management",
     icon: Database,
-    items: ["MongoDB", "SQL", "Firebase Firestore", "Cloud Storage"],
+    items: [
+      "MongoDB",
+      "Firebase Firestore",
+      "Data Modeling",
+    ],
     color: "primary",
     gradient: "from-primary/20 to-primary/5",
   },
   {
-    category: "Payments & Integrations",
+    category: "Payments & Third-Party Integrations",
     icon: CreditCard,
-    items: ["Razorpay", "Stripe", "Google Maps API", "Push Notifications"],
+    items: [
+      "Razorpay (Payments, Refunds, Settlements)",
+      "Stripe Payment Gateway",
+      "Google Maps API (Geo-fencing, Tracking)",
+      "Push Notifications (FCM)",
+    ],
     color: "accent",
     gradient: "from-accent/20 to-accent/5",
   },
   {
-    category: "Tools & DevOps",
+    category: "Tools, Version Control & Deployment",
     icon: GitBranch,
-    items: ["Git", "GitHub", "Postman", "VS Code", "App Store Deployment"],
+    items: [
+      "Git & GitHub",
+      "Postman & ThunderClient (API Testing)",
+      "VS Code",
+      "Play Store Deployment",
+      "App Store Deployment",
+    ],
     color: "primary",
     gradient: "from-primary/20 to-primary/5",
   },
-  {
-    category: "Other Skills",
-    icon: Layout,
-    items: ["Firebase Auth", "Deep Linking", "Background Tasks", "TypeScript"],
-    color: "accent",
-    gradient: "from-accent/20 to-accent/5",
-  },
+  // {
+  //   category: "Mobile App Capabilities",
+  //   icon: Layout,
+  //   items: [
+  //     "Firebase Authentication",
+  //     "Deep Linking",
+  //     "Background Tasks",
+  //     "Real-time Data Sync",
+  //     "Performance Optimization",
+  //   ],
+  //   color: "accent",
+  //   gradient: "from-accent/20 to-accent/5",
+  // },
 ];
+
 
 const containerVariants = {
   hidden: { opacity: 0 },
