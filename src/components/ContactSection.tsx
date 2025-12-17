@@ -156,7 +156,7 @@ const ContactSection = () => {
 
     {/* LinkedIn */}
     <motion.a
-      href="https://linkedin.com"
+      href="https://www.linkedin.com/in/lattupalli-mallikarjuna-rao-59908a22a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
       target="_blank"
       rel="noopener noreferrer"
       className="w-14 h-14 bg-background rounded-2xl flex items-center justify-center shadow-soft hover:shadow-card transition-all border border-border hover:border-accent group"
