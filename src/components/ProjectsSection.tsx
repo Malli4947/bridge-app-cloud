@@ -7,27 +7,28 @@ const projects = [
   {
     name: "Techmate",
     description:
-      "A full-scale service marketplace platform connecting freelancers, businesses, and consumers, built from ideation to production deployment.",
-    role: "Mobile & Backend Developer",
-    tech: ["React Native", "Node.js", "MongoDB", "Firebase", "Razorpay"],
+      "A full-scale service marketplace connecting freelancers, businesses, and consumers, developed end-to-end from ideation to production deployment.",
+    role: "Mobile, Web & Backend Developer",
+    tech: ["React Native", "React.js", "Node.js", "MongoDB", "Firebase", "Razorpay"],
     highlights: [
       "REST APIs for services, bookings, and payments",
-      "Firebase authentication & push notifications",
-      "Optimized performance using Context API & caching",
+      "Firebase authentication and push notifications",
+      "Performance optimization using Context API and caching"
     ],
     color: "primary",
-    platform: "mobile",
-   links: {
+    platform: ["mobile", "web"],
+    links: {
       website: "https://techmateservices.in/",
       playStore: "https://play.google.com/store/apps/details?id=com.techlink",
-      appStore: "https://apps.apple.com/in/app/techmate-t-link-solutions/id6753174737",
-    },
-
+      appStore:
+        "https://apps.apple.com/in/app/techmate-t-link-solutions/id6753174737"
+    }
   },
+
   {
     name: "RntOut",
     description:
-      "Multi-category rental marketplace for furniture, vehicles, and real estate with real-time availability and dynamic pricing.",
+      "A multi-category rental marketplace for furniture, vehicles, and real estate with real-time availability and dynamic pricing.",
     role: "Mobile Developer",
     tech: [
       "React Native",
@@ -35,169 +36,172 @@ const projects = [
       "MongoDB",
       "Firebase",
       "Razorpay",
-      "Google Maps API",
+      "Google Maps API"
     ],
     highlights: [
-      "Multi-transaction Razorpay payment flows",
-      "Geo-fencing & distance-based pricing",
-      "Improved booking accuracy by ~40%",
+      "Multi-transaction Razorpay payment workflows",
+      "Geo-fencing and distance-based pricing",
+      "Improved booking accuracy by approximately 40%"
     ],
     color: "accent",
-    platform: "mobile",
-    // link: "https://rntout.com",
+    platform: ["mobile"],
     links: {
       website: "https://rntout.com/",
       playStore: "https://play.google.com/store",
-      appStore: "https://apps.apple.com/in/app/rntout/id6743694042",
-    },
-
+      appStore: "https://apps.apple.com/in/app/rntout/id6743694042"
+    }
   },
+
   {
     name: "Gobooze",
     description:
-      "On-demand liquor ordering and delivery platform with real-time tracking and secure online payments.",
+      "An on-demand liquor ordering and delivery platform with real-time order tracking and secure online payments.",
     role: "Mobile Developer",
     tech: ["React Native", "Node.js", "Firebase", "Stripe"],
     highlights: [
-      "Stripe payment & refund workflows",
+      "Stripe payment and refund workflows",
       "Real-time order tracking using Firebase",
-      "Optimized UI across multiple devices",
+      "UI optimization across multiple device sizes"
     ],
     color: "primary",
-    platform: "mobile",
+    platform: ["mobile"],
     links: {
       website: "https://gobooze.com.au/",
-      playStore: "https://play.google.com/store/apps/details?id=com.goboozeuserapp",
-      appStore: "https://apps.apple.com/in/app/gobooze/id6739266630",
-    },
-
+      playStore:
+        "https://play.google.com/store/apps/details?id=com.goboozeuserapp",
+      appStore: "https://apps.apple.com/in/app/gobooze/id6739266630"
+    }
   },
-  
+
   {
     name: "Bodegaa",
     description:
-      "Hyperlocal grocery and essentials ordering platform with seamless checkout and live delivery updates.",
-    role: "Mobile & Backend Developer",
-    tech: ["React Native", "Node.js", "Firebase", "Razorpay"],
+      "A hyperlocal grocery and essentials ordering platform featuring seamless checkout and live delivery updates.",
+    role: "Mobile, Web & Backend Developer",
+    tech: ["React Native", "React.js", "Node.js", "Firebase", "Razorpay"],
     highlights: [
-      "Cart, checkout & order lifecycle APIs",
+      "Cart, checkout, and order lifecycle APIs",
       "Razorpay payment integration",
-      "Real-time push notifications",
+      "Real-time push notifications"
     ],
     color: "accent",
-    platform: "mobile",
+    platform: ["mobile", "web"],
     links: {
       website: "https://bodegaa.in/",
-      playStore: "https://play.google.com/store/apps/details?id=com.bodegaa",
-      appStore: "https://apps.apple.com/in/app/bodegaa/id6754384209",
-    },
-
+      playStore:
+        "https://play.google.com/store/apps/details?id=com.bodegaa",
+      appStore: "https://apps.apple.com/in/app/bodegaa/id6754384209"
+    }
   },
+
   {
     name: "SriRudra",
     description:
-      "Spiritual services booking platform enabling event scheduling, service management, and secure online payments.",
+      "A spiritual services booking platform enabling event scheduling, service management, and secure online payments.",
     role: "Mobile Developer",
     tech: ["React Native", ".NET", "MongoDB", "Firebase", "Razorpay"],
     highlights: [
       "Calendar-based booking workflows",
-      "Secure payment & authentication modules",
-      "Optimized performance for high-traffic events",
+      "Secure authentication and payment modules",
+      "Optimized performance for high-traffic religious events"
     ],
     color: "primary",
-    platform: "mobile",
-    // link: "https://srirudra.com",
+    platform: ["mobile"],
     links: {
       website: "https://srirudra-dev.codefactstech.com/",
-      playStore: "https://play.google.com/store/apps/details?id=com.sriRudra",
-      appStore: "https://apps.apple.com/in/app/srirudra/id6736977526",
-    },
-
+      playStore:
+        "https://play.google.com/store/apps/details?id=com.sriRudra",
+      appStore: "https://apps.apple.com/in/app/srirudra/id6736977526"
+    }
   },
+
   {
     name: "First House",
     description:
-      "Real estate platform for listing properties, client interaction, and real-time chat.",
+      "A real estate platform for property listings, client interactions, and real-time chat functionality.",
     role: "Mobile Developer",
     tech: ["React (TypeScript)", ".NET", "MongoDB", "Firebase", "Swagger"],
     highlights: [
-      "Property listing & inquiry modules",
-      "Real-time chat & notifications",
-      "Web/admin modules for listing management",
+      "Property listing and inquiry management",
+      "Real-time chat and notifications",
+      "Admin web modules for listing control"
     ],
     color: "accent",
-    platform: "mobile",
-    // link: "",
+    platform: ["mobile"],
     links: {
       website: "",
-      playStore: "https://play.google.com/store/apps/details?id=com.Firsthouse",
-      appStore: "https://apps.apple.com/in/app/first-house-app/id6751951958",
-    },
-
+      playStore:
+        "https://play.google.com/store/apps/details?id=com.Firsthouse",
+      appStore:
+        "https://apps.apple.com/in/app/first-house-app/id6751951958"
+    }
   },
+
   {
     name: "GoChauffeur",
     description:
-      "Ride booking and delivery platform with real-time driver tracking and trip management.",
+      "A ride booking and delivery platform with live driver tracking and trip lifecycle management.",
     role: "Mobile Developer",
     tech: [".NET", "React Native", "SQL", "Firebase", "Razorpay", "Swagger"],
     highlights: [
-      "Live driver tracking & trip lifecycle management",
+      "Live driver tracking and trip management",
       "Razorpay payment integration",
-      "Admin APIs for partner & ride monitoring",
+      "Admin APIs for partner and ride monitoring"
     ],
     color: "primary",
-    platform: "mobile",
-    // link: "",
+    platform: ["mobile"],
     links: {
       website: "",
-      playStore: "https://play.google.com/store/apps/details?id=com.varaahipspl.gochauffeur&pli=1",
-      appStore: "",
-    },
-
+      playStore:
+        "https://play.google.com/store/apps/details?id=com.varaahipspl.gochauffeur&pli=1",
+      appStore: ""
+    }
   },
+
   {
     name: "Luxorace",
     description:
-      "Fashion commerce platform for sarees and traditional wear with seller onboarding and inventory management.",
-    role: "Mobile Developer",
-    tech: ["React Native", "Node.js", "MongoDB", "Firebase", "Razorpay"],
+      "A fashion commerce platform for sarees and traditional wear with seller onboarding and inventory management.",
+    role: "Mobile & Web Developer",
+    tech: ["React Native", "React.js", "Node.js", "MongoDB", "Firebase", "Razorpay"],
     highlights: [
-      "Seller onboarding & product catalog management",
-      "Inventory tracking & seller payout calculations",
-      "Admin panels for approvals & sales analytics",
+      "Seller onboarding and product catalog management",
+      "Inventory tracking and seller payout calculations",
+      "Admin dashboards for approvals and sales analytics"
     ],
     color: "accent",
-    platform: "mobile",
+    platform: ["mobile", "web"],
     links: {
       website: "https://ethnic-hues.com/",
-      playStore: "https://play.google.com/store/apps/details?id=com.luxorace",
-      appStore: "https://apps.apple.com/in/app/luxorace/id6753107382",
-    },
-
+      playStore:
+        "https://play.google.com/store/apps/details?id=com.luxorace",
+      appStore: "https://apps.apple.com/in/app/luxorace/id6753107382"
+    }
   },
-{
+
+  {
     name: "Garuda Gases",
     description:
-      "Industrial and medical gases ordering and delivery platform with real-time tracking.",
-    role: "Mobile & Backend Developer",
-    tech: ["React Native", "Node.js", "Firebase", "Razorpay"],
+      "An industrial and medical gas ordering and delivery platform with real-time tracking.",
+    role: "Mobile, Web & Backend Developer",
+    tech: ["React Native", "React.js", "Node.js", "Firebase", "Razorpay"],
     highlights: [
-      "Order scheduling & quantity management APIs",
+      "Order scheduling and quantity management APIs",
       "Real-time delivery tracking",
-      "Optimized for low-network environments",
+      "Optimized for low-network environments"
     ],
     color: "primary",
-    platform: "mobile",
+    platform: ["mobile", "web"],
     links: {
       website: "",
-      playStore: "https://play.google.com/store/apps/details?id=com.garudagas",
-      appStore: "https://apps.apple.com/in/app/garuda-gases/id6753621877",
-    },
-
-  },
-
+      playStore:
+        "https://play.google.com/store/apps/details?id=com.garudagas",
+      appStore:
+        "https://apps.apple.com/in/app/garuda-gases/id6753621877"
+    }
+  }
 ];
+
 
 const containerVariants = {
   hidden: { opacity: 0 },

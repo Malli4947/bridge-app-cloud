@@ -89,8 +89,8 @@ const Navbar = () => {
             whileTap={{ scale: 0.95 }}
           >
            <a
-  href="/MalliKarjuna_Rao_Resume.pdf"
-  download="MalliKarjuna_Rao_Resume.pdf"
+  href="/Resume.pdf"
+  download="Resume.pdf"
 >
   <Button variant="hero" size="default">
     <Download className="w-4 h-4" />

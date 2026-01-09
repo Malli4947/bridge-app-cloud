@@ -7,6 +7,9 @@ import profilePhoto from "@/assets/profile-photo.png";
 const roles = [
   
   "Mobile Developer", 
+  "Web Developer",
+  "Backend Developer",
+  "MERN Stack Developer"
 ];
 
 const HeroSection = () => {
@@ -82,27 +85,34 @@ const [showComingSoon, setShowComingSoon] = useState(false);
               className="space-y-4"
             >
               <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full"
-              >
-                <Sparkles className="w-4 h-4 text-primary" />
-                <span className="text-primary font-medium text-sm">
-                  Available for freelancer or new projects.
-                </span>
-              </motion.div>
+  initial={{ opacity: 0, x: -20 }}
+  animate={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.6, delay: 0.2 }}
+  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10"
+>
+  <Sparkles className="h-4 w-4 text-primary" />
+  <span className="text-sm font-medium text-black">
+    Open to freelance projects and full-time opportunities
+  </span>
+</motion.div>
+
 
               <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-foreground leading-tight"
-              >
-                Hello, I'm
-                <br />
-                <span className="text-gradient">Mallikarjuna Rao</span>
-              </motion.h1>
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6, delay: 0.3 }}
+  className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-foreground leading-tight"
+>
+  Hello, I’m
+  <br />
+  <span className="text-gradient">
+    Mallikarjuna Rao
+  </span>
+</motion.h1>
+
+<p className="mt-2 text-sm text-muted-foreground">
+  Lattupalli Mallikarjuna Rao
+</p>
 
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -123,9 +133,10 @@ const [showComingSoon, setShowComingSoon] = useState(false);
   transition={{ duration: 0.6, delay: 0.5 }}
   className="text-muted-foreground text-lg max-w-lg leading-relaxed"
 >
-I build end-to-end mobile applications with a solid understanding of backend
-systems, delivering scalable products from concept to production on the
-Play Store, App Store.
+I build scalable mobile and web applications backed by robust backend systems,
+taking products from initial concept through development and successful
+production releases on the Play Store, App Store, and web platforms.
+
 </motion.p>
 
 
@@ -197,32 +208,33 @@ Play Store, App Store.
 </AnimatePresence>
             {/* Stats */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.7 }}
-              className="flex items-center gap-6 sm:gap-8 pt-4"
-            >
-              {[
-                { value: "2+", label: "Years Experience" },
-                { value: "6+", label: "Apps Shipped" },
-                { value: "100%", label: "App Reliability" },
-              ].map((stat, index) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.4, delay: 0.8 + index * 0.1 }}
-                  className="text-center"
-                >
-                  <p className="text-2xl sm:text-3xl font-bold text-foreground">
-                    {stat.value}
-                  </p>
-                  <p className="text-xs sm:text-sm text-muted-foreground">
-                    {stat.label}
-                  </p>
-                </motion.div>
-              ))}
-            </motion.div>
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6, delay: 0.7 }}
+  className="flex items-center gap-6 sm:gap-8 pt-4"
+>
+  {[
+    { value: "2.5+", label: "Years Experience" },
+    { value: "6+", label: "Mobile Apps Delivered" },
+    { value: "3+", label: "Websites Delivered" }
+  ].map((stat, index) => (
+    <motion.div
+      key={stat.label}
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.4, delay: 0.8 + index * 0.1 }}
+      className="text-center"
+    >
+      <p className="text-2xl sm:text-3xl font-bold text-foreground">
+        {stat.value}
+      </p>
+      <p className="text-xs sm:text-sm text-muted-foreground">
+        {stat.label}
+      </p>
+    </motion.div>
+  ))}
+</motion.div>
+
           </div>
 
           {/* Right Content - Photo */}
@@ -266,7 +278,7 @@ Play Store, App Store.
             >
               <div className="w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-card shadow-glow-lg gradient-border flex items-center justify-center bg-muted">
   <img
-    src="/image.jpg"
+    src="/image.jpeg"
     alt="Mallikarjuna Rao – Full Stack Developer"
     className="w-full h-full object-cover object-center"
   />
@@ -276,9 +288,8 @@ Play Store, App Store.
 
 
   
+{/* 
 
-
-              {/* Experience Badge */}
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -289,7 +300,7 @@ Play Store, App Store.
                   animate={{ y: [-5, 5, -5] }}
                   transition={{ duration: 3, repeat: Infinity }}
                 >
-                  <p className="text-2xl font-bold text-primary">2+</p>
+                  <p className="text-2xl font-bold text-primary">2.5+</p>
                   <p className="text-xs text-muted-foreground">
                     Years
                     <br />
@@ -298,7 +309,6 @@ Play Store, App Store.
                 </motion.div>
               </motion.div>
 
-              {/* Apps Badge */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -316,7 +326,7 @@ Play Store, App Store.
                     Shipped
                   </p>
                 </motion.div>
-              </motion.div>
+              </motion.div> */}
             </motion.div>
           </motion.div>
         </div>

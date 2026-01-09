@@ -195,18 +195,21 @@ const ContactSection = () => {
 
 
             {/* CTA */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="p-6 bg-gradient-to-br from-primary/10 to-accent/10 rounded-3xl border border-primary/20"
-            >
-              <p className="font-medium mb-2">💡 Open to Opportunities</p>
-              <p className="text-muted-foreground text-sm">
-                Available for freelance projects and full-time roles. Let’s
-                build something impactful together.
-              </p>
-            </motion.div>
+           <motion.div
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  className="p-6 bg-gradient-to-br from-primary/10 to-accent/10 rounded-3xl border border-primary/20"
+>
+  <p className="font-semibold mb-2">Open to New Opportunities</p>
+  <p className="text-muted-foreground text-sm leading-relaxed">
+    Open to collaborating on freelance projects or joining a full-time team,
+    contributing to the design and delivery of robust, scalable, and
+    user-focused digital products.
+  </p>
+</motion.div>
+
+
           </motion.div>
 
           {/* Contact Form */}

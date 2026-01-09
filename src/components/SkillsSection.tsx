@@ -14,6 +14,7 @@ const skills = [
     icon: Smartphone,
     items: [
       "React Native",
+      "Flutter",
       "React.js",
       "TypeScript (TS / TSX)",
       "Styled Components",
@@ -24,16 +25,16 @@ const skills = [
     color: "primary",
     gradient: "from-primary/20 to-primary/5",
   },
-  {
+  
+ {
     category: "Backend Development & APIs",
     icon: Server,
     items: [
-      
-      ".Net",
       "Node.js",
       "Express.js",
+      ".NET",
       "RESTful API Design",
-      "API Documentation (Swagger)",
+      "Swagger / API Documentation",
     ],
     color: "accent",
     gradient: "from-accent/20 to-accent/5",
@@ -44,7 +45,7 @@ const skills = [
     items: [
       "MongoDB",
       "Firebase Firestore",
-      "Data Modeling",
+      "Schema & Data Modeling",
     ],
     color: "primary",
     gradient: "from-primary/20 to-primary/5",
@@ -55,8 +56,9 @@ const skills = [
     items: [
       "Razorpay (Payments, Refunds, Settlements)",
       "Stripe Payment Gateway",
-      "Google Maps API (Geo-fencing, Tracking)",
-      "Push Notifications (FCM)",
+            "Google Maps API (Geo-fencing & Tracking)",
+            "Push Notifications (Firebase Cloud Messaging)",
+
     ],
     color: "accent",
     gradient: "from-accent/20 to-accent/5",
@@ -66,7 +68,7 @@ const skills = [
     icon: GitBranch,
     items: [
       "Git & GitHub",
-      "Postman & ThunderClient (API Testing)",
+      "Postman & ThunderClient",
       "VS Code",
       "Play Store Deployment",
       "App Store Deployment",
@@ -130,7 +132,7 @@ const SkillsSection = () => {
             Technologies I <span className="text-gradient">Work With</span>
           </h2>
           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-            A comprehensive toolkit for building modern mobile applications and
+            A comprehensive toolkit for building modern mobile applications, web applications and
             scalable backend services.
           </p>
         </motion.div>

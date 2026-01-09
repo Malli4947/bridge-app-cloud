@@ -5,30 +5,35 @@ const timelineItems = [
   {
   type: "work",
   icon: Briefcase,
-  title: "Software Engineer (Mobile & Backend)",
+  title: "Software Engineer (Mobile, Web & Backend)",
   subtitle: "Code Facts IT Solutions Pvt. Ltd., Hyderabad",
-  date: "Sep 2023 – Present",
+  date: "2023 – Present",
   color: "primary",
   points: [
-    "Designed, developed, and deployed 6+ production-grade mobile applications for Android and iOS using React Native, now live on Play Store and App Store",
-    "Owned end-to-end feature development including UI implementation, backend API design (Node.js, Express), database modeling (MongoDB), and deployment",
-    "Integrated Razorpay and Stripe payment gateways, Firebase Authentication, Firestore, Cloud Messaging, deep linking, and real-time GPS tracking for service and delivery-based apps",
-    "Built and maintained scalable RESTful APIs with secure authentication, clean architecture, and Swagger-based documentation",
-    "Improved API performance by up to 40% through query optimization, response caching, and efficient backend logic",
-    "Collaborated with UI/UX designers, QA engineers, and product managers in Agile sprints to translate business requirements into stable, high-quality releases",
-    "Participated in code reviews, optimized application reliability, and ensured smooth release cycles across multiple platforms",
-    "Mentored junior developers, shared best practices, and helped maintain consistent coding standards across the team"
-  ],
+    "Designed, developed, and deployed 6+ production-grade applications across mobile (Android & iOS) and web platforms, now live on the Play Store, App Store, and production web environments",
+    "Owned end-to-end feature development across mobile apps (React Native), web applications (React.js), and backend services (Node.js, Express)",
+    "Implemented responsive web interfaces and reusable UI components while ensuring cross-platform consistency between mobile and web",
+    "Designed and maintained scalable backend APIs, including business logic implementation, database schema design using MongoDB, and deployment workflows",
+    "Integrated payment gateways (Razorpay and Stripe), Firebase Authentication, Firestore, Cloud Messaging, deep linking, and real-time GPS tracking across mobile and web applications",
+    "Developed secure, well-documented RESTful APIs following clean architecture principles, with Swagger-based API documentation",
+    "Improved overall system performance by up to 40% through backend query optimization, caching strategies, and efficient API response handling",
+    "Collaborated closely with UI/UX designers, QA engineers, and product managers in Agile sprints to deliver stable, scalable, and high-quality releases",
+    "Actively participated in code reviews, improved application reliability, and ensured smooth release cycles across mobile, web, and backend systems",
+    "Mentored junior developers, shared best practices, and enforced consistent coding standards across frontend and backend teams"
+  ]
 },
+
+
   {
     type: "education",
     icon: GraduationCap,
-    title: "B.E. in Electronics and Communication Engineering",
-    subtitle: "Hindusthan Institute of Technology / Anna University",
+    title: "Bachelor of Engineering in Electronics and Communication Engineering",
+    subtitle: "Hindusthan Institute of Technology, Anna University",
     date: "2019 – 2023",
     color: "accent",
-    extra: "CGPA: 8.75/10",
+    extra: "CGPA: 8.75 / 10"
   },
+
   {
     type: "publication",
     icon: FileText,
@@ -36,9 +41,11 @@ const timelineItems = [
     subtitle: "International Journal of Engineering Research & Technology (IJERT)",
     date: "Apr 2023",
     color: "primary",
-    extra: '"Design and Implementation of IoT-based Floor Cleaning Robot for Healthy Environment"',
-  },
+    extra:
+      "“Design and Implementation of an IoT-Based Floor Cleaning Robot for a Healthy Environment”"
+  }
 ];
+
 
 const ExperienceSection = () => {
   return (
@@ -97,7 +104,7 @@ const ExperienceSection = () => {
               {/* Content Card */}
               <div
                 className={`flex-1 ml-24 md:ml-0 ${
-                  index % 2 === 0 ? "md:pr-16 md:text-right" : "md:pl-16"
+                  index % 2 === 0 ? "md:pr-16 md:text-left" : "md:pl-16"
                 }`}
               >
                 <motion.div
@@ -132,7 +139,7 @@ const ExperienceSection = () => {
                   {item.points && (
                     <ul
                       className={`space-y-3 text-muted-foreground text-sm ${
-                        index % 2 === 0 ? "md:text-right" : ""
+                        index % 2 === 0 ? "md:text-left" : ""
                       }`}
                     >
                       {item.points.map((point, pIndex) => (
@@ -143,7 +150,7 @@ const ExperienceSection = () => {
                           viewport={{ once: true }}
                           transition={{ delay: index * 0.2 + pIndex * 0.1 }}
                           className={`flex items-start gap-2 ${
-                            index % 2 === 0 ? "md:flex-row-reverse" : ""
+                            index % 2 === 0 ? "md:flex-row" : ""
                           }`}
                         >
                           <span
