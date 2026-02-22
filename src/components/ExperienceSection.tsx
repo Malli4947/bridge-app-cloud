@@ -1,175 +1,118 @@
-import { Briefcase, GraduationCap, FileText, Calendar } from "lucide-react";
+import { Briefcase, GraduationCap, Calendar } from "lucide-react";
 import { motion } from "framer-motion";
 
-const timelineItems = [
+const timeline = [
   {
-  type: "work",
-  icon: Briefcase,
-  title: "Software Engineer (Mobile & Backend)",
-  subtitle: "Code Facts IT Solutions Pvt. Ltd., Hyderabad",
-  date: "Sep 2023 – Present",
-  color: "primary",
-  points: [
-    "Designed, developed, and deployed 6+ production-grade mobile applications for Android and iOS using React Native, now live on Play Store and App Store",
-    "Owned end-to-end feature development including UI implementation, backend API design (Node.js, Express), database modeling (MongoDB), and deployment",
-    "Integrated Razorpay and Stripe payment gateways, Firebase Authentication, Firestore, Cloud Messaging, deep linking, and real-time GPS tracking for service and delivery-based apps",
-    "Built and maintained scalable RESTful APIs with secure authentication, clean architecture, and Swagger-based documentation",
-    "Improved API performance by up to 40% through query optimization, response caching, and efficient backend logic",
-    "Collaborated with UI/UX designers, QA engineers, and product managers in Agile sprints to translate business requirements into stable, high-quality releases",
-    "Participated in code reviews, optimized application reliability, and ensured smooth release cycles across multiple platforms",
-    "Mentored junior developers, shared best practices, and helped maintain consistent coding standards across the team"
-  ],
-},
-  {
-    type: "education",
-    icon: GraduationCap,
-    title: "B.E. in Electronics and Communication Engineering",
-    subtitle: "Hindusthan Institute of Technology / Anna University",
-    date: "2019 – 2023",
-    color: "accent",
-    extra: "CGPA: 8.75/10",
+    icon: Briefcase,
+    title: "Software Engineer",
+    subtitle: "Code Facts IT Solutions Pvt. Ltd., Hyderabad, India",
+    date: "Jan 2023 – Present",
+    points: [
+      "Engineered and deployed 8+ production-grade mobile applications using React Native, live on Play Store & App Store",
+      "Designed and developed scalable RESTful APIs using Node.js & Express with secure JWT-based authentication",
+      "Integrated Razorpay and Stripe payment gateways including refunds, settlements, and webhook validation",
+      "Implemented Firebase Authentication, Firestore, Push Notifications (FCM), and real-time tracking features",
+      "Improved backend performance by 40% through query optimization, caching strategies, and efficient schema design",
+      "Led end-to-end feature development from UI implementation to backend deployment",
+      "Collaborated with UI/UX, QA, and backend teams in Agile sprint cycles ensuring production stability",
+      "Managed Play Store & App Store build generation, release processes, and production debugging",
+    ],
   },
   {
-    type: "publication",
-    icon: FileText,
-    title: "Research Publication",
-    subtitle: "International Journal of Engineering Research & Technology (IJERT)",
-    date: "Apr 2023",
-    color: "primary",
-    extra: '"Design and Implementation of IoT-based Floor Cleaning Robot for Healthy Environment"',
+    icon: GraduationCap,
+    title: "Bachelor of Engineering – Electronics & Communication",
+    subtitle:
+      "Hindusthan Institute of Technology,Coimbatore, Tamil Nadu, India",
+    date: "2019 – 2023",
+    points: [
+      "Graduated with CGPA 8.7/10",
+      "Published research paper in IJERT (IoT-based Automation System)",
+      "Built strong foundation in system design, networking & software engineering",
+    ],
   },
 ];
 
 const ExperienceSection = () => {
   return (
-    <section id="experience" className="py-24 relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute top-1/4 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 right-0 w-80 h-80 bg-accent/5 rounded-full blur-3xl" />
+    <section id="experience" className="py-28 relative overflow-hidden">
+      {/* Background Glow */}
+      <div className="absolute top-1/3 left-0 w-[500px] h-[500px] bg-primary/5 blur-3xl rounded-full" />
+      <div className="absolute bottom-1/3 right-0 w-[400px] h-[400px] bg-accent/5 blur-3xl rounded-full" />
 
       <div className="container mx-auto px-4 relative">
+        {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          transition={{ duration: 0.8 }}
+          className="text-center mb-20"
         >
-          <span className="inline-block px-4 py-1 bg-primary/10 text-primary font-semibold text-sm rounded-full mb-4">
+          <span className="px-4 py-1 bg-primary/10 text-primary rounded-full text-sm font-semibold">
             EXPERIENCE
           </span>
-          <h2 className="text-3xl lg:text-4xl font-bold text-foreground">
-            My Professional <span className="text-gradient">Journey</span>
+          <h2 className="text-3xl lg:text-5xl font-bold mt-4">
+            Professional <span className="text-gradient">Journey</span>
           </h2>
+          <p className="text-muted-foreground mt-6 max-w-2xl mx-auto text-lg">
+            Building scalable mobile and backend systems with real-world impact.
+          </p>
         </motion.div>
 
         {/* Timeline */}
-        <div className="max-w-4xl mx-auto relative">
-          {/* Timeline Line */}
-          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-accent to-primary/20" />
-
-          {timelineItems.map((item, index) => (
+        <div className="max-w-4xl mx-auto space-y-16">
+          {timeline.map((item, index) => (
             <motion.div
-              key={item.title}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              key={index}
+              initial={{ opacity: 0, x: index % 2 === 0 ? -80 : 80 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              className={`relative flex items-start gap-8 mb-12 ${
-                index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-              }`}
+              transition={{ duration: 0.8 }}
+              whileHover={{ scale: 1.02 }}
+              className="relative bg-card p-10 rounded-3xl shadow-xl border border-border hover:shadow-2xl transition-all duration-500"
             >
-              {/* Timeline Node */}
-              <motion.div
-                className={`absolute left-8 md:left-1/2 -translate-x-1/2 z-10`}
-                whileHover={{ scale: 1.2 }}
-              >
-                <div
-                  className={`w-16 h-16 rounded-2xl flex items-center justify-center shadow-card ${
-                    item.color === "primary"
-                      ? "bg-gradient-to-br from-primary to-primary/80"
-                      : "bg-gradient-to-br from-accent to-accent/80"
-                  }`}
+              {/* Icon */}
+              <div className="flex items-center gap-6 mb-6">
+                <motion.div
+                  whileHover={{ rotate: 360 }}
+                  transition={{ duration: 0.6 }}
+                  className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center shadow-lg"
                 >
                   <item.icon className="w-7 h-7 text-primary-foreground" />
-                </div>
-              </motion.div>
+                </motion.div>
 
-              {/* Content Card */}
-              <div
-                className={`flex-1 ml-24 md:ml-0 ${
-                  index % 2 === 0 ? "md:pr-16 md:text-right" : "md:pl-16"
-                }`}
-              >
-                <motion.div
-                  whileHover={{ y: -5 }}
-                  className="bg-card rounded-3xl p-6 md:p-8 shadow-soft hover:shadow-card transition-all duration-300 border border-border"
-                >
-                  {/* Date Badge */}
-                  <motion.div
-                    className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-medium mb-4 ${
-                      item.color === "primary"
-                        ? "bg-primary/10 text-primary"
-                        : "bg-accent/10 text-accent"
-                    }`}
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    <Calendar className="w-3.5 h-3.5" />
-                    {item.date}
-                  </motion.div>
-
-                  <h3 className="text-xl font-bold text-foreground mb-2">
+                <div>
+                  <h3 className="font-bold text-xl text-foreground">
                     {item.title}
                   </h3>
-
-                  <p
-                    className={`font-medium mb-4 ${
-                      item.color === "primary" ? "text-primary" : "text-accent"
-                    }`}
-                  >
+                  <p className="text-primary font-medium">
                     {item.subtitle}
                   </p>
-
-                  {item.points && (
-                    <ul
-                      className={`space-y-3 text-muted-foreground text-sm ${
-                        index % 2 === 0 ? "md:text-right" : ""
-                      }`}
-                    >
-                      {item.points.map((point, pIndex) => (
-                        <motion.li
-                          key={pIndex}
-                          initial={{ opacity: 0 }}
-                          whileInView={{ opacity: 1 }}
-                          viewport={{ once: true }}
-                          transition={{ delay: index * 0.2 + pIndex * 0.1 }}
-                          className={`flex items-start gap-2 ${
-                            index % 2 === 0 ? "md:flex-row-reverse" : ""
-                          }`}
-                        >
-                          <span
-                            className={`w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0 ${
-                              item.color === "primary"
-                                ? "bg-primary"
-                                : "bg-accent"
-                            }`}
-                          />
-                          <span>{point}</span>
-                        </motion.li>
-                      ))}
-                    </ul>
-                  )}
-
-                  {item.extra && (
-                    <p
-                      className={`text-muted-foreground ${
-                        item.type === "publication" ? "italic" : "font-semibold"
-                      }`}
-                    >
-                      {item.extra}
-                    </p>
-                  )}
-                </motion.div>
+                </div>
               </div>
+
+              {/* Date */}
+              <div className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
+                <Calendar className="w-4 h-4" />
+                {item.date}
+              </div>
+
+              {/* Points */}
+              <ul className="space-y-3 text-muted-foreground text-sm leading-relaxed">
+                {item.points.map((point, i) => (
+                  <motion.li
+                    key={i}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    className="flex gap-3"
+                  >
+                    <span className="w-2 h-2 bg-primary mt-2 rounded-full flex-shrink-0" />
+                    {point}
+                  </motion.li>
+                ))}
+              </ul>
             </motion.div>
           ))}
         </div>

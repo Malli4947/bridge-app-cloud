@@ -1,415 +1,331 @@
-import { ExternalLink, Smartphone,Apple,PlayCircle } from "lucide-react";
+import {  Smartphone,
+  Globe,
+  Apple,
+  PlayCircle, } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
 const projects = [
   {
-    name: "Tech Mate",
+    name: "TechMate",
     description:
-      "A full-scale service marketplace platform connecting freelancers, businesses, and consumers, built from ideation to production deployment.",
-    role: "Mobile & Backend Developer",
+      "TechMate is a large-scale service marketplace platform designed to connect businesses, OEMs, service providers, and consumers through a unified digital ecosystem. The platform enables affordable product access, employment generation, and seamless B2C & B2B interactions.",
+    role: "Lead Mobile & Backend Developer",
     tech: ["React Native", "Node.js", "MongoDB", "Firebase", "Razorpay"],
     highlights: [
-      "REST APIs for services, bookings, and payments",
-      "Firebase authentication & push notifications",
-      "Optimized performance using Context API & caching",
+      "Architected scalable REST APIs for bookings, services & transactions",
+      "Integrated secure Razorpay payment workflows with refund handling",
+      "Implemented Firebase authentication, push notifications & real-time updates",
+      "Optimized backend queries improving response time by 35%",
     ],
-    color: "primary",
-    platform: "mobile",
-   links: {
+    links: {
       website: "https://techmateservices.in/",
       playStore: "https://play.google.com/store/apps/details?id=com.techlink",
-      appStore: "https://apps.apple.com/in/app/techmate-t-link-solutions/id6753174737",
+      appStore:
+        "https://apps.apple.com/in/app/techmate-t-link-solutions/id6753174737",
     },
-
   },
+
   {
     name: "RntOut",
     description:
-      "Multi-category rental marketplace for furniture, vehicles, and real estate with real-time availability and dynamic pricing.",
-    role: "Mobile & Backend Developer",
+      "RntOut is a multi-category rental marketplace for furniture, vehicles, and real estate with geo-fencing and dynamic pricing. The platform enables users to rent assets with real-time availability tracking.",
+    role: "Full-Stack Developer",
     tech: [
       "React Native",
       "Node.js",
       "MongoDB",
       "Firebase",
-      "Razorpay",
       "Google Maps API",
+      "Razorpay",
     ],
     highlights: [
-      "Multi-transaction Razorpay payment flows",
-      "Geo-fencing & distance-based pricing",
-      "Improved booking accuracy by ~40%",
+      "Built geo-fencing & distance-based pricing engine",
+      "Designed multi-transaction payment workflows",
+      "Improved booking accuracy by 40%",
+      "Integrated real-time availability system",
     ],
-    color: "accent",
-    platform: "mobile",
-    // link: "https://rntout.com",
     links: {
       website: "https://rntout.com/",
-      playStore: "https://play.google.com/store",
-      appStore: "https://apps.apple.com/in/app/rntout/id6743694042",
+      appStore:
+        "https://apps.apple.com/in/app/rntout/id6743694042",
     },
-
   },
+
   {
     name: "Gobooze",
     description:
-      "On-demand liquor ordering and delivery platform with real-time tracking and secure online payments.",
-    role: "Mobile Developer",
+      "Gobooze is an on-demand liquor delivery platform offering 400+ premium beverages with secure checkout, real-time order tracking, and partner delivery management.",
+    role: "Mobile Application Developer",
     tech: ["React Native", "Node.js", "Firebase", "Stripe"],
     highlights: [
-      "Stripe payment & refund workflows",
-      "Real-time order tracking using Firebase",
-      "Optimized UI across multiple devices",
+      "Implemented Stripe payment & refund lifecycle",
+      "Built real-time delivery tracking using Firebase",
+      "Developed both User & Partner delivery applications",
+      "Optimized UI performance across multiple devices",
     ],
-    color: "primary",
-    platform: "mobile",
     links: {
       website: "https://gobooze.com.au/",
-      playStore: "https://play.google.com/store/apps/details?id=com.goboozeuserapp",
-      appStore: "https://apps.apple.com/in/app/gobooze/id6739266630",
+      playStore:
+        "https://play.google.com/store/apps/details?id=com.goboozeuserapp",
+      appStore:
+        "https://apps.apple.com/in/app/gobooze/id6739266630",
     },
-
   },
-  
+
   {
     name: "Bodegaa",
     description:
-      "Hyperlocal grocery and essentials ordering platform with seamless checkout and live delivery updates.",
+      "Bodegaa is a hyperlocal grocery commerce platform delivering fresh produce, daily essentials, and household products with seamless checkout and partner-based delivery operations.",
     role: "Mobile & Backend Developer",
-    tech: ["React Native", "Node.js", "Firebase", "Razorpay"],
+    tech: ["React Native", "Node.js", "MongoDB", "Firebase", "Razorpay"],
     highlights: [
-      "Cart, checkout & order lifecycle APIs",
-      "Razorpay payment integration",
-      "Real-time push notifications",
+      "Developed cart & order lifecycle management APIs",
+      "Integrated Razorpay secure checkout flow",
+      "Implemented real-time delivery partner tracking",
+      "Built separate User & Partner apps",
     ],
-    color: "accent",
-    platform: "mobile",
     links: {
       website: "https://bodegaa.in/",
-      playStore: "https://play.google.com/store/apps/details?id=com.bodegaa",
-      appStore: "https://apps.apple.com/in/app/bodegaa/id6754384209",
+      playStore:
+        "https://play.google.com/store/apps/details?id=com.bodegaa",
+      appStore:
+        "https://apps.apple.com/in/app/bodegaa/id6754384209",
     },
-
   },
+
   {
     name: "SriRudra",
     description:
-      "Spiritual services booking platform enabling event scheduling, service management, and secure online payments.",
+      "SriRudra is a spiritual commerce platform providing curated pooja essentials, idols, and devotional products with online ordering and secure payments.",
     role: "Mobile Developer",
     tech: ["React Native", ".NET", "MongoDB", "Firebase", "Razorpay"],
     highlights: [
-      "Calendar-based booking workflows",
-      "Secure payment & authentication modules",
-      "Optimized performance for high-traffic events",
+      "Built calendar-based booking & product modules",
+      "Implemented secure authentication & payment modules",
+      "Optimized performance for high festival traffic",
     ],
-    color: "primary",
-    platform: "mobile",
-    // link: "https://srirudra.com",
     links: {
       website: "https://srirudra-dev.codefactstech.com/",
-      playStore: "https://play.google.com/store/apps/details?id=com.sriRudra",
-      appStore: "https://apps.apple.com/in/app/srirudra/id6736977526",
+      playStore:
+        "https://play.google.com/store/apps/details?id=com.sriRudra",
+      appStore:
+        "https://apps.apple.com/in/app/srirudra/id6736977526",
     },
-
   },
+
   {
     name: "First House",
     description:
-      "Real estate platform for listing properties, client interaction, and real-time chat.",
-    role: "Mobile & Web Module Developer",
-    tech: ["React (TypeScript)", ".NET", "MongoDB", "Firebase", "Swagger"],
+      "Real estate discovery platform connecting buyers, sellers, and builders with verified property listings and real-time communication features.",
+    role: "Mobile Developer",
+    tech: ["React Native", "React (TS)", ".NET", "MongoDB", "Firebase"],
     highlights: [
-      "Property listing & inquiry modules",
-      "Real-time chat & notifications",
-      "Web/admin modules for listing management",
+      "Developed verified listing & inquiry modules",
+      "Integrated real-time chat & push notifications",
+      "Built admin & builder dashboard modules",
     ],
-    color: "accent",
-    platform: "mobile",
-    // link: "",
     links: {
-      website: "",
-      playStore: "https://play.google.com/store/apps/details?id=com.Firsthouse",
-      appStore: "https://apps.apple.com/in/app/first-house-app/id6751951958",
+      playStore:
+        "https://play.google.com/store/apps/details?id=com.Firsthouse",
+      appStore:
+        "https://apps.apple.com/in/app/first-house-app/id6751951958",
     },
-
   },
+
   {
     name: "GoChauffeur",
     description:
-      "Ride booking and delivery platform with real-time driver tracking and trip management.",
+      "Ride-booking and logistics delivery platform with live driver tracking, trip lifecycle management, and payment processing.",
     role: "Mobile Developer",
-    tech: [".NET", "React Native", "SQL", "Firebase", "Razorpay", "Swagger"],
+    tech: [".NET", "React Native", "SQL", "Firebase", "Razorpay"],
     highlights: [
-      "Live driver tracking & trip lifecycle management",
-      "Razorpay payment integration",
-      "Admin APIs for partner & ride monitoring",
+      "Implemented real-time driver tracking",
+      "Integrated Razorpay payment flow",
+      "Built admin APIs for ride & partner management",
     ],
-    color: "primary",
-    platform: "mobile",
-    // link: "",
     links: {
-      website: "",
-      playStore: "https://play.google.com/store/apps/details?id=com.varaahipspl.gochauffeur&pli=1",
-      appStore: "",
+      playStore:
+        "https://play.google.com/store/apps/details?id=com.varaahipspl.gochauffeur&pli=1",
     },
-
   },
+
   {
     name: "Luxorace",
     description:
-      "Fashion commerce platform for sarees and traditional wear with seller onboarding and inventory management.",
+      "Fashion e-commerce platform for sarees and traditional wear with seller onboarding, inventory tracking, and payout management.",
     role: "Mobile, Backend & Seller Module Developer",
     tech: ["React Native", "Node.js", "MongoDB", "Firebase", "Razorpay"],
     highlights: [
-      "Seller onboarding & product catalog management",
-      "Inventory tracking & seller payout calculations",
-      "Admin panels for approvals & sales analytics",
+      "Developed seller onboarding workflow",
+      "Implemented inventory & payout calculation engine",
+      "Built admin analytics dashboards",
     ],
-    color: "accent",
-    platform: "mobile",
     links: {
       website: "https://ethnic-hues.com/",
-      playStore: "https://play.google.com/store/apps/details?id=com.luxorace",
-      appStore: "https://apps.apple.com/in/app/luxorace/id6753107382",
+      playStore:
+        "https://play.google.com/store/apps/details?id=com.luxorace",
+      appStore:
+        "https://apps.apple.com/in/app/luxorace/id6753107382",
     },
-
   },
-{
+
+  {
     name: "Garuda Gases",
     description:
-      "Industrial and medical gases ordering and delivery platform with real-time tracking.",
+      "Industrial and medical gases ordering platform with scheduling, quantity management, and real-time delivery updates.",
     role: "Mobile & Backend Developer",
     tech: ["React Native", "Node.js", "Firebase", "Razorpay"],
     highlights: [
-      "Order scheduling & quantity management APIs",
-      "Real-time delivery tracking",
+      "Designed order scheduling & management APIs",
+      "Implemented real-time delivery tracking",
       "Optimized for low-network environments",
     ],
-    color: "primary",
-    platform: "mobile",
     links: {
-      website: "",
-      playStore: "https://play.google.com/store/apps/details?id=com.garudagas",
-      appStore: "https://apps.apple.com/in/app/garuda-gases/id6753621877",
+      playStore:
+        "https://play.google.com/store/apps/details?id=com.garudagas",
+      appStore:
+        "https://apps.apple.com/in/app/garuda-gases/id6753621877",
     },
-
   },
-
 ];
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.15 },
-  },
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6 },
-  },
-};
-
 const ProjectsSection = () => {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [hovered, setHovered] = useState<number | null>(null);
 
   return (
-    <section id="projects" className="py-24 bg-card relative overflow-hidden">
-      {/* Background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl" />
+    <section id="projects" className="py-28 relative overflow-hidden">
+      <div className="absolute top-1/2 left-1/2 w-[1000px] h-[1000px] bg-primary/5 blur-3xl rounded-full -translate-x-1/2 -translate-y-1/2" />
 
       <div className="container mx-auto px-4 relative">
-        {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <span className="inline-block px-4 py-1 bg-primary/10 text-primary font-semibold text-sm rounded-full mb-4">
-            PORTFOLIO
-          </span>
-          <h2 className="text-3xl lg:text-4xl font-bold text-foreground">
-            Projects I’ve <span className="text-gradient">Shipped</span>
+          <h2 className="text-4xl font-bold">
+            Real-World{" "}
+            <span className="text-gradient">Production Applications</span>
           </h2>
-          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-            Production-ready applications live on Play Store, App Store, and Web —
-            built end-to-end from concept to deployment.
+          <p className="text-muted-foreground mt-6 max-w-2xl mx-auto text-lg">
+            End-to-end engineered mobile and backend systems serving real users,
+            optimized for scalability, reliability, and business impact.
           </p>
         </motion.div>
 
-        {/* Cards */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
-        >
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
           {projects.map((project, index) => (
             <motion.div
               key={project.name}
-              variants={cardVariants}
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
-              className="group relative bg-background rounded-3xl overflow-hidden shadow-soft hover:shadow-card transition-all duration-500"
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -15, scale: 1.03 }}
+              onMouseEnter={() => setHovered(index)}
+              onMouseLeave={() => setHovered(null)}
+              className="relative bg-card rounded-3xl p-8 shadow-xl border border-border transition-all duration-500 overflow-hidden"
             >
-              {/* Border */}
-              <div
-                className={`absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${
-                  project.color === "primary"
-                    ? "shadow-[inset_0_0_0_2px_hsl(var(--primary)/0.3)]"
-                    : "shadow-[inset_0_0_0_2px_hsl(var(--accent)/0.3)]"
-                }`}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0"
+                animate={{ opacity: hovered === index ? 1 : 0 }}
               />
 
-              {/* Header */}
-              <div
-                className={`relative p-6 ${
-                  project.color === "primary"
-                    ? "bg-gradient-to-br from-primary/15 via-primary/10 to-transparent"
-                    : "bg-gradient-to-br from-accent/15 via-accent/10 to-transparent"
-                }`}
-              >
-                <div className="flex items-start justify-between mb-3">
-                  <div>
-                    <div className="flex items-center gap-2 mb-1">
-                      <Smartphone
-                        className={`w-4 h-4 ${
-                          project.color === "primary"
-                            ? "text-primary"
-                            : "text-accent"
-                        }`}
-                      />
-                      <h3 className="text-xl font-bold text-foreground">
-                        {project.name}
-                      </h3>
-                    </div>
-                    <p
-                      className={`text-sm font-medium ${
-                        project.color === "primary"
-                          ? "text-primary"
-                          : "text-accent"
-                      }`}
-                    >
-                      {project.role}
-                    </p>
-                  </div>
-
-                 <motion.div
-  initial={{ opacity: 0, scale: 0.5 }}
-  animate={{
-    opacity: hoveredIndex === index ? 1 : 0,
-    scale: hoveredIndex === index ? 1 : 0.5,
-  }}
-  transition={{ duration: 0.2 }}
-  className="flex gap-1"
->
-  {/* Play Store */}
-  {project.links?.playStore && (
-    <Button asChild variant="ghost" size="icon">
-      <a
-        href={project.links.playStore}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="View on Play Store"
-      >
-        <img
-          src="/icons/playstore.png"
-          alt="Play Store"
-          className="w-6 h-6 object-contain"
-        />
-      </a>
-    </Button>
-  )}
-
-  {/* App Store */}
-  {project.links?.appStore && (
-    <Button asChild variant="ghost" size="icon">
-      <a
-        href={project.links.appStore}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="View on App Store"
-      >
-        <img
-          src="/icons/appstore.png"
-          alt="App Store"
-          className="w-6 h-6 object-contain"
-        />
-      </a>
-    </Button>
-  )}
-
-  {/* Website */}
-  {project.links?.website && (
-    <Button asChild variant="ghost" size="icon">
-      <a
-        href={project.links.website}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Visit Website"
-      >
-        <img
-          src="/icons/chrome.png"
-          alt="Website"
-          className="w-6 h-6 object-contain"
-        />
-      </a>
-    </Button>
-  )}
-</motion.div>
-
-
+              <div className="relative z-10">
+                <div className="flex items-center gap-2 mb-3">
+                  <Smartphone className="w-5 h-5 text-primary" />
+                  <h3 className="text-xl font-bold">{project.name}</h3>
                 </div>
-              </div>
 
-              {/* Content */}
-              <div className="p-6 space-y-4 relative">
-                <p className="text-muted-foreground text-sm leading-relaxed">
+                <p className="text-primary text-sm font-medium mb-4">
+                  {project.role}
+                </p>
+
+                <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
                   {project.description}
                 </p>
 
-                {/* Highlights */}
-                <ul className="space-y-2">
-                  {project.highlights.map((highlight) => (
-                    <li
-                      key={highlight}
-                      className="flex items-start gap-2 text-sm text-muted-foreground"
-                    >
-                      <span
-                        className={`w-1.5 h-1.5 rounded-full mt-1.5 ${
-                          project.color === "primary"
-                            ? "bg-primary"
-                            : "bg-accent"
-                        }`}
-                      />
-                      {highlight}
+                <ul className="space-y-2 mb-6 text-sm">
+                  {project.highlights.map((point, i) => (
+                    <li key={i} className="flex gap-2">
+                      <span className="w-2 h-2 bg-primary mt-1.5 rounded-full" />
+                      {point}
                     </li>
                   ))}
                 </ul>
 
-                {/* Tech Stack */}
-                <div className="flex flex-wrap gap-2 pt-2">
-                  {project.tech.map((tech) => (
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {project.tech.map((tech, i) => (
                     <span
-                      key={tech}
-                      className="px-2.5 py-1 bg-muted text-muted-foreground text-xs rounded-lg hover:bg-primary/10 hover:text-primary transition-colors"
+                      key={i}
+                      className="px-3 py-1 bg-muted text-xs rounded-xl"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
+
+                <div className="flex gap-3 flex-wrap">
+{project.links.website && (
+                    <motion.a
+                      href={project.links.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.2, rotate: 6 }}
+                      whileTap={{ scale: 0.9 }}
+                      className="w-12 h-12 flex items-center justify-center rounded-2xl bg-muted border border-border transition-all duration-300 hover:shadow-xl hover:border-primary"
+                    >
+                      <img
+                        src="/icons/chrome.png"
+                        alt="Website"
+                        className="w-6 h-6 object-contain"
+                      />
+                    </motion.a>
+                  )}
+
+                  {project.links.playStore && (
+                    <motion.a
+                      href={project.links.playStore}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.2, y: -5 }}
+                      whileTap={{ scale: 0.9 }}
+                      className="w-12 h-12 flex items-center justify-center rounded-2xl bg-muted border border-border transition-all duration-300 hover:shadow-xl hover:border-green-500"
+                    >
+                      <img
+                        src="/icons/playstore.png"
+                        alt="Play Store"
+                        className="w-6 h-6 object-contain"
+                      />
+                    </motion.a>
+                  )}
+
+
+                                   {project.links.appStore && (
+                    <motion.a
+                      href={project.links.appStore}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.2, rotate: -6 }}
+                      whileTap={{ scale: 0.9 }}
+                      className="w-12 h-12 flex items-center justify-center rounded-2xl bg-muted border border-border transition-all duration-300 hover:shadow-xl hover:border-blue-500"
+                    >
+                      <img
+                        src="/icons/appstore.png"
+                        alt="App Store"
+                        className="w-6 h-6 object-contain"
+                      />
+                    </motion.a>
+                  )}
+
+                </div>
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
