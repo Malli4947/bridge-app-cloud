@@ -1,3 +1,9 @@
+export interface ProjectLinks {
+  website?: string;
+  playStore?: string;
+  appStore?: string;
+}
+
 export interface Project {
   key: string;
   icon: string;
@@ -10,6 +16,8 @@ export interface Project {
   tech: string[];
   tags: string[];
   year: string;
+  role?: string;
+  links?: ProjectLinks;
 }
 
 export interface ProjectFeature {
@@ -19,13 +27,16 @@ export interface ProjectFeature {
 
 export interface Skill {
   name: string;
-  level: 'Expert' | 'Advanced' | 'Intermediate';
+  level?: 'Expert' | 'Advanced' | 'Intermediate';
+  logo?: string;
+  color?: string;
 }
 
 export interface SkillCategory {
   category: string;
   title: string;
-  iconPath: string;
+  iconPath?: string;
+  iconKey?: string;
   skills: Skill[];
 }
 

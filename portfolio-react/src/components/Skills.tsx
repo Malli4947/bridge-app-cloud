@@ -5,7 +5,7 @@ import SectionHeader from './SectionHeader';
 import { skillCategories, devPractices, techMarquee } from '@/data/portfolio';
 import type { Skill, SkillCategory } from '@/types';
 
-const categoryIcons: Record<SkillCategory['iconKey'], React.ElementType> = {
+const categoryIcons: Record<string, React.ElementType> = {
   code: Code2,
   globe: Globe,
   database: Database,
@@ -39,7 +39,7 @@ export default function Skills() {
 }
 
 function SkillCategoryCard({ category, delay }: { category: SkillCategory; delay: number }) {
-  const Icon = categoryIcons[category.iconKey];
+  const Icon = categoryIcons[category.iconKey ?? ''] ?? Code2;
 
   return (
     <motion.div

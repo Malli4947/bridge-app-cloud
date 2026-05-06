@@ -18,7 +18,7 @@ export default function About() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
           <p className="font-display text-xl leading-snug mb-5">
-            I'm a{' '}
+            
             <strong className="bg-gradient-1 bg-clip-text text-transparent font-semibold">
               Senior Software Engineer
             </strong>{' '}
@@ -32,7 +32,7 @@ export default function About() {
 
           <p className="text-[1.05rem] text-muted mb-5 leading-[1.75]">
             Currently at <span className="text-accent-amber font-medium">Code Facts IT Solutions</span> in
-            Hyderabad, I've engineered and shipped{' '}
+            Hyderabad, engineered and shipped{' '}
             <strong className="text-[#f4f4f8] font-semibold">9+ production apps</strong> live on Google
             Play Store and Apple App Store — spanning service marketplaces, e-commerce, real estate,
             on-demand delivery, ride-booking, and B2B platforms.
@@ -52,7 +52,7 @@ export default function About() {
 
           <p className="text-[1.05rem] text-muted mb-5 leading-[1.75]">
             I obsess over performance — shaving milliseconds, eliminating crashes, and making
-            interfaces feel <em className="font-serif text-accent-amber">alive</em>. I've improved
+            interfaces feel <em className="font-serif text-accent-amber">alive</em>. Improved
             backend response times by{' '}
             <strong className="text-[#f4f4f8] font-semibold">40%</strong> through query optimization
             and caching, and I own features end-to-end: from UI implementation to backend deployment,

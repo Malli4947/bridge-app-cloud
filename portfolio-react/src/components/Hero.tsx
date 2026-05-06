@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, Phone, ArrowRight, MessageCircle } from 'lucide-react';
+import { Github, Linkedin, Mail, ArrowRight } from 'lucide-react';
 import { personalInfo } from '@/data/portfolio';
 
 const itemFade = {

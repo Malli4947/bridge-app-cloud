@@ -109,7 +109,7 @@ export default function ProjectModal({ project, onClose }: Props) {
                 </div>
 
                 <div className="flex flex-wrap gap-2 pt-4 border-t border-white/10">
-                  {project.links.website && (
+                  {project.links?.website && (
                     <a
                       href={project.links.website}
                       target="_blank"
@@ -120,7 +120,7 @@ export default function ProjectModal({ project, onClose }: Props) {
                       Visit Website
                     </a>
                   )}
-                  {project.links.playStore && (
+                  {project.links?.playStore && (
                     <a
                       href={project.links.playStore}
                       target="_blank"
@@ -131,7 +131,7 @@ export default function ProjectModal({ project, onClose }: Props) {
                       Google Play
                     </a>
                   )}
-                  {project.links.appStore && (
+                  {project.links?.appStore && (
                     <a
                       href={project.links.appStore}
                       target="_blank"

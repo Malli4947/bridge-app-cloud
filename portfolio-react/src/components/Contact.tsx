@@ -1,8 +1,15 @@
 import { useState, FormEvent } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, Linkedin, Github, Send } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 import SectionHeader from './SectionHeader';
 import { personalInfo } from '@/data/portfolio';
+
+// ─── EmailJS config ───────────────────────────────────────────────
+const EMAILJS_SERVICE_ID  = 'service_fffel9a';
+const EMAILJS_TEMPLATE_ID = 'template_6sdo6a5';
+const EMAILJS_PUBLIC_KEY  = '5iATdztOtqW_sDD5E';
+// ─────────────────────────────────────────────────────────────────
 
 interface FormData {
   name: string;
@@ -22,24 +29,32 @@ export default function Contact({ onShowToast }: Props) {
     subject: '',
     message: '',
   });
+  const [sending, setSending] = useState(false);
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    const { name, email, subject, message } = form;
 
-    const mailtoBody = `Hi Mallikarjuna Rao,%0D%0A%0D%0A${encodeURIComponent(
-      message,
-    )}%0D%0A%0D%0A--%0D%0A${encodeURIComponent(name)}%0D%0A${encodeURIComponent(email)}`;
-    const mailto = `mailto:${personalInfo.email}?subject=${encodeURIComponent(
-      subject,
-    )}&body=${mailtoBody}`;
-
-    window.location.href = mailto;
-    onShowToast(`Thanks ${name.split(' ')[0]}! Opening your email client…`);
-
-    setTimeout(() => {
+    setSending(true);
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: form.name,
+          reply_to:  form.email,
+          subject:   form.subject,
+          message:   form.message,
+        },
+        EMAILJS_PUBLIC_KEY,
+      );
+      onShowToast(`Thanks ${form.name.split(' ')[0]}! Your message has been sent ✓`);
       setForm({ name: '', email: '', subject: '', message: '' });
-    }, 500);
+    } catch (err) {
+      console.error('EmailJS error:', err);
+      onShowToast('Oops! Something went wrong. Please try again.');
+    } finally {
+      setSending(false);
+    }
   };
 
   const handleChange = (key: keyof FormData) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -111,9 +126,9 @@ export default function Contact({ onShowToast }: Props) {
           onSubmit={handleSubmit}
           className="flex flex-col gap-6 p-10 bg-bg-card border border-white/10 rounded-[20px]"
         >
-          <FormField label="Your Name" name="name" value={form.name} onChange={handleChange('name')} />
-          <FormField label="Your Email" name="email" type="email" value={form.email} onChange={handleChange('email')} />
-          <FormField label="Subject" name="subject" value={form.subject} onChange={handleChange('subject')} />
+          <FormField label="Your Name"  name="from_name"    value={form.name}    onChange={handleChange('name')} />
+          <FormField label="Your Email" name="reply_to"     value={form.email}   onChange={handleChange('email')} type="email" />
+          <FormField label="Subject"    name="subject"      value={form.subject} onChange={handleChange('subject')} />
           <FormField
             label="Message"
             name="message"
@@ -121,8 +136,12 @@ export default function Contact({ onShowToast }: Props) {
             onChange={handleChange('message')}
             textarea
           />
-          <button type="submit" className="btn btn-primary group self-start mt-2">
-            <span className="relative z-10">Send Message</span>
+          <button
+            type="submit"
+            disabled={sending}
+            className="btn btn-primary group self-start mt-2 disabled:opacity-60 disabled:cursor-not-allowed"
+          >
+            <span className="relative z-10">{sending ? 'Sending…' : 'Send Message'}</span>
             <Send size={18} className="relative z-10 transition-transform group-hover:translate-x-1" />
             <span className="absolute inset-0 bg-gradient-1 -translate-x-full group-hover:translate-x-0 transition-transform duration-500" />
           </button>

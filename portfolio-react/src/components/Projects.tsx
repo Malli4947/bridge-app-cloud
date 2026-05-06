@@ -111,13 +111,13 @@ function ProjectCard({ project, delay }: CardProps) {
           <span className="font-mono text-[0.7rem] uppercase tracking-[0.15em] text-dim self-center mr-1">
             Live:
           </span>
-          {project.links.website && (
+          {project.links?.website && (
             <BrandIcon href={project.links.website} type="chrome" label="Website" />
           )}
-          {project.links.playStore && (
+          {project.links?.playStore && (
             <BrandIcon href={project.links.playStore} type="playstore" label="Google Play Store" />
           )}
-          {project.links.appStore && (
+          {project.links?.appStore && (
             <BrandIcon href={project.links.appStore} type="appstore" label="Apple App Store" />
           )}
         </div>
