@@ -338,7 +338,7 @@ export const devPractices: { name: string; logo: string; color: string }[] = [
 export const experiences: Experience[] = [
   {
     date: 'Jan 2023 — Present',
-    title: 'Senior Software Engineer · React Developer',
+    title: 'Senior Software Engineer',
     company: 'Code Facts IT Solutions Pvt. Ltd.',
     location: '📍 Hyderabad, Telangana, India',
     points: [
