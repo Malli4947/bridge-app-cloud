@@ -9,7 +9,7 @@ export default function Loader() {
     const timer = setTimeout(() => {
       setShow(false);
       document.body.style.overflow = '';
-    }, 1800);
+    }, 3000);
     return () => {
       clearTimeout(timer);
       document.body.style.overflow = '';
