@@ -108,7 +108,6 @@ export default function ProjectModal({ project, onClose }: Props) {
                   ))}
                 </div>
 
-                {/* Live links */}
                 <div className="flex flex-wrap gap-2 pt-4 border-t border-white/10">
                   {project.links.website && (
                     <a

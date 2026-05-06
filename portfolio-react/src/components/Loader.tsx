@@ -16,7 +16,7 @@ export default function Loader() {
     };
   }, []);
 
-  const letters = ['M', 'A', 'L', 'L', 'I', 'K', 'A', 'R', 'J', 'U', 'N', 'A', ' ', 'R', 'A', 'O' ];
+  const letters = ['M', 'A', 'L', 'L', 'I', 'K', 'A', 'R', 'J', 'U', 'N', 'A', ' ', 'R', 'A', 'O', ' ', 'P', 'O', 'R', 'T', 'F', 'O', 'L', 'I', 'O'];
 
   return (
     <AnimatePresence>

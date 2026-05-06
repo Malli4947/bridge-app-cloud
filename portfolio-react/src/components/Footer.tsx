@@ -58,18 +58,14 @@ export default function Footer() {
       className="relative pt-24 pb-8 border-t border-white/10 mt-16 overflow-hidden"
       style={{ paddingLeft: 'clamp(1rem, 4vw, 3rem)', paddingRight: 'clamp(1rem, 4vw, 3rem)' }}
     >
-      {/* Top gradient border */}
       <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-1" />
 
-      {/* Subtle radial glow at top */}
       <div
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] pointer-events-none opacity-30"
         style={{
           background: 'radial-gradient(ellipse at top, rgba(6,212,212,0.15), transparent 70%)',
         }}
       />
-
-      {/* Scroll to top button */}
       <motion.button
         onClick={scrollToTop}
         whileHover={{ scale: 1.1, y: -4 }}
@@ -84,9 +80,7 @@ export default function Footer() {
         <ArrowUp className="w-6 h-6 text-bg" />
       </motion.button>
 
-      {/* Main content */}
       <div className="container-custom relative z-[2]">
-        {/* CTA strip on top — "Got a project? Let's talk" */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -94,7 +88,6 @@ export default function Footer() {
           transition={{ duration: 0.6 }}
           className="mb-16 p-8 lg:p-10 rounded-3xl bg-gradient-to-br from-accent-cyan/10 via-bg-card to-accent-purple/10 border border-white/10 flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden"
         >
-          {/* Decorative glow */}
           <div className="absolute -top-20 -right-20 w-60 h-60 bg-accent-cyan/10 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-accent-purple/10 rounded-full blur-3xl pointer-events-none" />
 
@@ -120,9 +113,7 @@ export default function Footer() {
           </motion.button>
         </motion.div>
 
-        {/* 3-column grid: Branding · Quick Links · Connect */}
         <div className="grid md:grid-cols-3 gap-10 lg:gap-16 text-center md:text-left mb-12">
-          {/* LEFT — Branding */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -141,7 +132,6 @@ export default function Footer() {
               applications. 9+ apps shipped on Play Store &amp; App Store.
             </p>
 
-            {/* Status pill */}
             <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-emerald-500/10 border border-emerald-500/30 rounded-full text-xs font-mono text-emerald-400">
               <span
                 className="relative w-2 h-2 bg-emerald-500 rounded-full"
@@ -150,8 +140,6 @@ export default function Footer() {
               Available for new opportunities
             </div>
           </motion.div>
-
-          {/* CENTER — Quick Links */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -179,7 +167,6 @@ export default function Footer() {
             </div>
           </motion.div>
 
-          {/* RIGHT — Connect */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -191,7 +178,6 @@ export default function Footer() {
               Connect
             </h4>
 
-            {/* Social icon row */}
             <div className="flex justify-center md:justify-start gap-3 flex-wrap mb-5">
               {socials.map((item) => (
                 <motion.a
@@ -212,7 +198,6 @@ export default function Footer() {
               ))}
             </div>
 
-            {/* Direct contact rows */}
             <div className="space-y-2.5 text-sm text-muted">
               <a
                 href="mailto:mrao.developer@gmail.com"
@@ -224,7 +209,6 @@ export default function Footer() {
                 mrao.developer@gmail.com
               </a>
               <a
-                //  href="tel:+916304434947"
                 className="group flex items-center gap-2.5 justify-center md:justify-start hover:text-accent-cyan transition-colors cursor-none"
               >
                 <span className="w-7 h-7 rounded-md bg-white/[0.04] border border-white/10 flex items-center justify-center group-hover:border-accent-cyan group-hover:bg-accent-cyan/10 transition-colors">
@@ -242,7 +226,6 @@ export default function Footer() {
           </motion.div>
         </div>
 
-        {/* Bottom row */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -258,7 +241,6 @@ export default function Footer() {
         </motion.div>
       </div>
 
-      {/* Giant background text */}
       <div
         className="absolute -bottom-12 left-1/2 -translate-x-1/2 font-display font-extrabold text-white/[0.08] tracking-[-0.05em] whitespace-nowrap pointer-events-none z-[1]"
         style={{ fontSize: 'clamp(5rem, 18vw, 12rem)' }}

@@ -31,7 +31,6 @@ export default function Hero() {
       className="relative min-h-screen pt-32 pb-16 grid lg:grid-cols-[1fr_360px] gap-12 items-center container-custom z-[2]"
       style={{ paddingLeft: 'clamp(1rem, 4vw, 3rem)', paddingRight: 'clamp(1rem, 4vw, 3rem)' }}
     >
-      {/* Background giant text */}
       <motion.div
         className="absolute font-display font-extrabold text-white/[0.08] tracking-[-0.05em] leading-[0.85] -bottom-8 -right-12 -z-[1] pointer-events-none select-none"
         style={{ fontSize: 'clamp(8rem, 25vw, 18rem)' }}
@@ -41,10 +40,7 @@ export default function Hero() {
       >
         ENGINEER
       </motion.div>
-
-      {/* Left column */}
       <div>
-        {/* Status pill */}
         <motion.div
           variants={itemFade}
           custom={0.2}
@@ -58,8 +54,6 @@ export default function Hero() {
           />
           Senior Software Engineer · Open to Opportunities
         </motion.div>
-
-        {/* Big headline */}
         <h1
           className="font-display font-bold tracking-[-0.04em] mb-8"
           style={{ fontSize: 'clamp(2.5rem, 8vw, 6rem)', lineHeight: 1.05 }}
@@ -179,7 +173,6 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Right column */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -190,7 +183,6 @@ export default function Hero() {
         <CodeSnippet />
       </motion.div>
 
-      {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -206,9 +198,6 @@ export default function Hero() {
   );
 }
 
-/* =============================================================
-   SocialLink — now supports themed hover colors per network
-   ============================================================= */
 type HoverColor = 'cyan' | 'purple' | 'amber' | 'pink' | 'emerald';
 
 function SocialLink({
@@ -248,9 +237,6 @@ function SocialLink({
   );
 }
 
-/* =============================================================
-   ROTATING BADGE
-   ============================================================= */
 function RotatingBadge() {
   return (
     <div className="relative w-[200px] h-[200px] flex items-center justify-center">
@@ -274,9 +260,6 @@ function RotatingBadge() {
   );
 }
 
-/* =============================================================
-   CODE SNIPPET — Updated with current numbers
-   ============================================================= */
 function CodeSnippet() {
   return (
     <div className="w-full bg-bg-card border border-white/10 rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.4)] hover:-translate-y-1 hover:-rotate-1 transition-transform duration-300">

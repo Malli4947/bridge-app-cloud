@@ -25,7 +25,6 @@ export default function Navigation() {
 
   return (
     <>
-      {/* Scroll progress bar */}
       <div
         className="fixed top-0 left-0 h-0.5 bg-gradient-1 z-[9998] shadow-[0_0_10px_#06d4d4]"
         style={{ width: `${progress}%`, transition: 'width 0.1s linear' }}
@@ -86,7 +85,6 @@ export default function Navigation() {
           Let's Talk <ArrowRight size={14} />
         </button>
 
-        {/* Hamburger for mobile */}
         <button
           onClick={toggleMenu}
           className="lg:hidden flex flex-col gap-1 bg-transparent border-none cursor-pointer p-2"
@@ -96,7 +94,6 @@ export default function Navigation() {
         </button>
       </nav>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div

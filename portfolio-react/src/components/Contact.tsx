@@ -27,7 +27,6 @@ export default function Contact({ onShowToast }: Props) {
     e.preventDefault();
     const { name, email, subject, message } = form;
 
-    // Compose mailto link
     const mailtoBody = `Hi Mallikarjuna Rao,%0D%0A%0D%0A${encodeURIComponent(
       message,
     )}%0D%0A%0D%0A--%0D%0A${encodeURIComponent(name)}%0D%0A${encodeURIComponent(email)}`;

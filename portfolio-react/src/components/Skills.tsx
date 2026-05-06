@@ -26,25 +26,18 @@ export default function Skills() {
         and production-ready experiences.
       </p>
 
-      {/* Main grid — 3 columns on desktop, mimics the screenshot layout */}
       <div className="grid lg:grid-cols-3 gap-6 mb-8">
         {skillCategories.map((cat, i) => (
           <SkillCategoryCard key={cat.category} category={cat} delay={i * 0.08} />
         ))}
       </div>
 
-      {/* Development Practices — full width row */}
       <DevPracticesCard />
-
-      {/* Marquee */}
       <Marquee />
     </section>
   );
 }
 
-/* ========================================================================
-   CATEGORY CARD
-   ======================================================================== */
 function SkillCategoryCard({ category, delay }: { category: SkillCategory; delay: number }) {
   const Icon = categoryIcons[category.iconKey];
 
@@ -56,10 +49,8 @@ function SkillCategoryCard({ category, delay }: { category: SkillCategory; delay
       transition={{ duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] }}
       className="group relative p-6 lg:p-8 bg-bg-card border border-white/10 rounded-3xl overflow-hidden transition-all duration-400 hover:border-accent-cyan/40 hover:shadow-[0_20px_50px_rgba(6,212,212,0.08)]"
     >
-      {/* Top accent line */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-1 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
 
-      {/* Header — icon + title with separator line, like screenshot */}
       <div className="flex items-center gap-3 mb-6">
         <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-accent-purple to-accent-cyan flex items-center justify-center flex-shrink-0 shadow-[0_8px_20px_rgba(168,85,247,0.3)]">
           <Icon className="w-5 h-5 text-white" />
@@ -68,7 +59,6 @@ function SkillCategoryCard({ category, delay }: { category: SkillCategory; delay
         <div className="flex-1 h-px bg-white/10" />
       </div>
 
-      {/* Skills grid — 4 columns of brand logos */}
       <div className="grid grid-cols-4 gap-3">
         {category.skills.map((skill, i) => (
           <SkillIconTile key={skill.name + i} skill={skill} delay={delay + i * 0.04} />
@@ -78,13 +68,9 @@ function SkillCategoryCard({ category, delay }: { category: SkillCategory; delay
   );
 }
 
-/* ========================================================================
-   SKILL ICON TILE — Brand logo + name
-   ======================================================================== */
 function SkillIconTile({ skill, delay }: { skill: Skill; delay: number }) {
   const [imgError, setImgError] = useState(false);
 
-  // Use jsDelivr CDN for Simple Icons (real brand logos)
   const iconUrl = `https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/${skill.logo}.svg`;
 
   return (
@@ -96,7 +82,6 @@ function SkillIconTile({ skill, delay }: { skill: Skill; delay: number }) {
       whileHover={{ y: -4, scale: 1.05 }}
       className="group/icon flex flex-col items-center gap-2 p-2 rounded-xl cursor-default"
     >
-      {/* Logo — Simple Icons SVG colored via CSS mask */}
       <div className="w-11 h-11 rounded-lg flex items-center justify-center bg-white/[0.03] group-hover/icon:bg-white/[0.06] transition-all duration-300 shadow-inner">
         {!imgError ? (
           <span
@@ -108,7 +93,6 @@ function SkillIconTile({ skill, delay }: { skill: Skill; delay: number }) {
               mask: `url(${iconUrl}) center/contain no-repeat`,
             }}
           >
-            {/* Hidden img to detect load failure */}
             <img
               src={iconUrl}
               alt=""
@@ -117,7 +101,6 @@ function SkillIconTile({ skill, delay }: { skill: Skill; delay: number }) {
             />
           </span>
         ) : (
-          // Fallback: first letter of skill name in brand color
           <span
             className="font-display font-bold text-base"
             style={{ color: skill.color }}
@@ -127,7 +110,6 @@ function SkillIconTile({ skill, delay }: { skill: Skill; delay: number }) {
         )}
       </div>
 
-      {/* Name */}
       <span className="text-[0.7rem] text-muted text-center leading-tight font-medium group-hover/icon:text-[#f4f4f8] transition-colors">
         {skill.name}
       </span>
@@ -135,9 +117,6 @@ function SkillIconTile({ skill, delay }: { skill: Skill; delay: number }) {
   );
 }
 
-/* ========================================================================
-   DEV PRACTICES — Wide full-width card at the bottom
-   ======================================================================== */
 function DevPracticesCard() {
   return (
     <motion.div
@@ -170,9 +149,6 @@ function DevPracticesCard() {
   );
 }
 
-/* ========================================================================
-   MARQUEE
-   ======================================================================== */
 function Marquee() {
   const items = [...techMarquee, ...techMarquee];
 

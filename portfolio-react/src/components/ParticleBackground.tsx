@@ -86,7 +86,6 @@ export default function ParticleBackground() {
         p.draw(ctx);
       });
 
-      // Connecting lines
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x;

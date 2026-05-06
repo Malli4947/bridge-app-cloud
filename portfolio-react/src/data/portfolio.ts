@@ -1,8 +1,5 @@
 import type { Project, SkillCategory, Experience, NavLink, Stat } from '@/types';
 
-/* ==========================================================================
-   PROJECTS — All 9 production apps (unchanged)
-   ========================================================================== */
 export const projects: Project[] = [
   {
     key: 'techmate',
@@ -235,10 +232,6 @@ export const projects: Project[] = [
   },
 ];
 
-/* ==========================================================================
-   SKILLS — Reorganized by full-stack lifecycle:
-   Frontend → Mobile → Backend & DB → Admin Dashboards → Cloud → DevOps
-   ========================================================================== */
 export const skillCategories: SkillCategory[] = [
   {
     category: 'frontend',
@@ -342,11 +335,6 @@ export const devPractices: { name: string; logo: string; color: string }[] = [
   { name: 'Cross-Functional Collab', logo: 'slack', color: '#4A154B' },
 ];
 
-/* ==========================================================================
-   EXPERIENCE — Rich content covering UI → Backend → Admin → Deployment
-   Uses your existing simple structure: { date, title, company, location, points, stack }
-   Uses inline <strong>...</strong> tags + section headings for clarity.
-   ========================================================================== */
 export const experiences: Experience[] = [
   {
     date: 'Jan 2023 — Present',
@@ -354,35 +342,29 @@ export const experiences: Experience[] = [
     company: 'Code Facts IT Solutions Pvt. Ltd.',
     location: '📍 Hyderabad, Telangana, India',
     points: [
-      // Mobile Development
       'Developed and successfully launched <strong>9+ cross-platform mobile applications</strong> using React Native for Android and iOS, improving user engagement and performance across app stores',
       'Built scalable, reusable, and high-performance <strong>mobile UI components</strong> following best practices and clean architecture patterns',
       'Implemented advanced React patterns — <strong>Hooks, Context API, and Redux</strong> — for predictable state management and performance-optimized rendering',
       'Optimized performance through memoization, lazy loading, code splitting, and efficient state handling for production-grade UX',
 
-      // Frontend / Web & Admin Dashboards
       'Developed and maintained <strong>web platforms and admin dashboards</strong> using React.js and TypeScript for internal operations, analytics, and reporting',
       'Built responsive, accessible UI with reusable component systems, charts, data tables, role-based access controls, and modern design tokens',
 
-      // Backend Development & APIs
       'Designed and consumed <strong>RESTful APIs</strong> using Node.js and Express.js to support both mobile and web applications',
       'Implemented secure JWT-based authentication, role-based access control, and robust error-handling middleware',
       'Modeled MongoDB schemas with Mongoose ODM supporting complex relationships and aggregation pipelines',
       'Improved backend performance by <strong>40%</strong> through query optimization, caching strategies, and efficient schema design',
 
-      // Integrations & Real-Time Features
       'Integrated <strong>Razorpay & Stripe</strong> payment gateways including refunds, settlements, and webhook validation for secure transaction processing',
       'Implemented <strong>Firebase</strong> Authentication, Firestore/Realtime DB, Cloud Messaging, Crashlytics, and Analytics for secure, real-time app features',
       'Built push notifications using <strong>Firebase Cloud Messaging (FCM)</strong> for user engagement and real-time alerts',
       'Integrated geolocation, Google Maps APIs, and third-party SDKs for media, payments, and device-native features',
 
-      // Deployment & Release Management
       'Managed complete app deployment lifecycle — building release versions, handling certificates, provisioning profiles, and store submissions',
       'Published and maintained apps on <strong>Google Play Store and Apple App Store</strong> with successful approvals and timely updates',
       'Deployed web platforms via <strong>Vercel & Render</strong> with CI/CD pipelines for automated testing and seamless rollouts',
       'Performed production debugging, performance monitoring, and post-release patching using Crashlytics and analytics dashboards',
 
-      // Collaboration & Process
       'Collaborated with backend teams, UI/UX designers, and QA in <strong>Agile sprint cycles</strong> to deliver production-ready features on schedule',
       'Performed code reviews to enforce code quality, security, and maintainability standards across the team',
     ],

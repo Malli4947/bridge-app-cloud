@@ -17,7 +17,6 @@ export default function About() {
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
-          {/* Lead headline */}
           <p className="font-display text-xl leading-snug mb-5">
             I'm a{' '}
             <strong className="bg-gradient-1 bg-clip-text text-transparent font-semibold">
@@ -31,7 +30,6 @@ export default function About() {
             applications end-to-end.
           </p>
 
-          {/* Current role */}
           <p className="text-[1.05rem] text-muted mb-5 leading-[1.75]">
             Currently at <span className="text-accent-amber font-medium">Code Facts IT Solutions</span> in
             Hyderabad, I've engineered and shipped{' '}
@@ -40,7 +38,6 @@ export default function About() {
             on-demand delivery, ride-booking, and B2B platforms.
           </p>
 
-          {/* Tech breadth */}
           <p className="text-[1.05rem] text-muted mb-5 leading-[1.75]">
             My toolkit covers the full product lifecycle — from{' '}
             <span className="tag-inline">React.js</span> and{' '}
@@ -53,7 +50,6 @@ export default function About() {
             <span className="tag-inline">Firebase</span>.
           </p>
 
-          {/* Performance & ownership */}
           <p className="text-[1.05rem] text-muted mb-5 leading-[1.75]">
             I obsess over performance — shaving milliseconds, eliminating crashes, and making
             interfaces feel <em className="font-serif text-accent-amber">alive</em>. I've improved
@@ -62,8 +58,6 @@ export default function About() {
             and caching, and I own features end-to-end: from UI implementation to backend deployment,
             Play Store / App Store releases, and production monitoring.
           </p>
-
-          {/* Tags */}
           <div className="flex flex-wrap gap-2 mt-8">
             {[
               'Full-Stack Engineer',

@@ -13,7 +13,6 @@ export default function Projects() {
         scalability, reliability, and business impact.
       </p>
 
-      {/* 2 columns on desktop, 1 on mobile, all cards stretch to equal height */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
         {projects.map((project, i) => (
           <ProjectCard key={project.key} project={project} delay={(i % 2) * 0.1} />
@@ -38,12 +37,10 @@ function ProjectCard({ project, delay }: CardProps) {
       whileHover={{ y: -6 }}
       className="group bg-bg-card border border-white/10 rounded-3xl overflow-hidden transition-all duration-500 hover:border-accent-cyan/30 hover:shadow-[0_30px_60px_rgba(6,212,212,0.1)] flex flex-col h-full"
     >
-      {/* Gradient banner header — gives each card a distinctive identity */}
       <div
         className="relative h-32 flex items-center px-7 lg:px-8 overflow-hidden"
         style={{ background: project.bg }}
       >
-        {/* Decorative glow */}
         <div
           className="absolute inset-0"
           style={{
@@ -52,14 +49,8 @@ function ProjectCard({ project, delay }: CardProps) {
           }}
         />
 
-        {/* Year + category badges — top-right */}
-        {/* <div className="absolute top-4 right-4 flex gap-2 z-[2]">
-          <span className="font-mono text-[0.7rem] px-2.5 py-1 bg-black/40 backdrop-blur-md text-white rounded-full border border-white/20">
-            {project.year}
-          </span>
-        </div> */}
+       
 
-        {/* Emoji icon + title */}
         <div className="relative z-[2] flex items-center gap-4">
           <div className="w-16 h-16 rounded-2xl bg-white/15 backdrop-blur-md border border-white/20 flex items-center justify-center text-4xl flex-shrink-0 shadow-lg">
             {project.icon}
@@ -75,18 +66,14 @@ function ProjectCard({ project, delay }: CardProps) {
         </div>
       </div>
 
-      {/* Content area — flex-col so footer pins to bottom */}
       <div className="p-7 lg:p-8 flex flex-col flex-1">
-        {/* Role */}
         <p className="text-accent-amber text-sm font-semibold mb-4 flex items-center gap-2">
           <span className="w-1 h-4 bg-accent-amber rounded-full" />
           {project.role}
         </p>
 
-        {/* Description */}
         <p className="text-muted text-[0.95rem] leading-[1.7] mb-6">{project.description}</p>
 
-        {/* Highlights */}
         <div className="mb-6 flex-1">
           <h4 className="font-mono text-[0.7rem] uppercase tracking-[0.15em] text-dim mb-3">
             Key Highlights
@@ -104,7 +91,6 @@ function ProjectCard({ project, delay }: CardProps) {
           </ul>
         </div>
 
-        {/* Tech stack */}
         <div className="mb-6">
           <h4 className="font-mono text-[0.7rem] uppercase tracking-[0.15em] text-dim mb-3">
             Tech Stack
@@ -121,7 +107,6 @@ function ProjectCard({ project, delay }: CardProps) {
           </div>
         </div>
 
-        {/* Brand-color circular link icons — pinned to bottom */}
         <div className="flex gap-3 pt-5 border-t border-white/5 mt-auto">
           <span className="font-mono text-[0.7rem] uppercase tracking-[0.15em] text-dim self-center mr-1">
             Live:
@@ -141,9 +126,6 @@ function ProjectCard({ project, delay }: CardProps) {
   );
 }
 
-/* ============================================================
-   BRAND ICON — White circle with real multi-color brand logo
-   ============================================================ */
 interface BrandIconProps {
   href: string;
   type: 'chrome' | 'playstore' | 'appstore';
@@ -169,11 +151,7 @@ function BrandIcon({ href, type, label }: BrandIconProps) {
   );
 }
 
-/* ============================================================
-   REAL BRAND LOGOS — Inline SVG (no external dependencies)
-   ============================================================ */
 
-// Google Chrome logo
 function ChromeLogo() {
   return (
     <svg width="26" height="26" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -199,7 +177,6 @@ function ChromeLogo() {
   );
 }
 
-// Google Play Store logo
 function PlayStoreLogo() {
   return (
     <svg width="26" height="26" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -241,7 +218,6 @@ function PlayStoreLogo() {
   );
 }
 
-// Apple App Store logo
 function AppStoreLogo() {
   return (
     <svg width="26" height="26" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">

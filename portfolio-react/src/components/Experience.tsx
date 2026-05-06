@@ -40,7 +40,6 @@ function TimelineItem({ exp, delay }: { exp: ExpType; delay: number }) {
       transition={{ duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] }}
       className="relative mb-12 last:mb-0"
     >
-      {/* Dot */}
       <div className="absolute -left-12 top-2 w-[26px] h-[26px] bg-bg border-2 border-accent-cyan rounded-full flex items-center justify-center">
         <div className="w-2.5 h-2.5 bg-gradient-1 rounded-full" style={{ animation: 'pulse-ring 2s infinite' }} />
       </div>
