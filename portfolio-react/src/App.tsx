@@ -11,6 +11,7 @@ import Projects from '@/components/Projects';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import Toast from '@/components/Toast';
+import ChatBot from '@/components/ChatBot';
 
 export default function App() {
   const [toast, setToast] = useState<{ show: boolean; message: string }>({
@@ -79,6 +80,7 @@ export default function App() {
 
       <Footer />
       <Toast show={toast.show} message={toast.message} />
+      <ChatBot />
     </>
   );
 }

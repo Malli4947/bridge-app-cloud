@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, ArrowRight } from 'lucide-react';
+import { Github, Linkedin, Mail, ArrowRight, FileText, Download } from 'lucide-react';
 import { personalInfo } from '@/data/portfolio';
 
 const itemFade = {
@@ -137,7 +137,7 @@ export default function Hero() {
           custom={1.1}
           initial="hidden"
           animate="visible"
-          className="flex flex-wrap gap-4 mb-10"
+          className="flex flex-wrap gap-4 mb-6"
         >
           <button onClick={() => handleScrollTo('#projects')} className="btn btn-primary group">
             <span className="relative z-10">View My Work</span>
@@ -150,6 +150,33 @@ export default function Hero() {
           <button onClick={() => handleScrollTo('#contact')} className="btn btn-ghost">
             Get in Touch
           </button>
+        </motion.div>
+
+        {/* Resume Buttons */}
+        <motion.div
+          variants={itemFade}
+          custom={1.2}
+          initial="hidden"
+          animate="visible"
+          className="flex flex-wrap gap-3 mb-10"
+        >
+          <a
+            href="/Mallikarjuna_Rao_Lattupalli_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-accent-cyan/40 text-accent-cyan text-sm font-display font-semibold hover:bg-accent-cyan/10 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(6,212,212,0.2)] transition-all duration-300 no-underline"
+          >
+            <FileText size={15} />
+            View Resume
+          </a>
+          <a
+            href="/Mallikarjuna_Rao_Lattupalli_Resume.pdf"
+            download="Mallikarjuna_Rao_Lattupalli_Resume.pdf"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-accent-purple/40 text-accent-purple text-sm font-display font-semibold hover:bg-accent-purple/10 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(168,85,247,0.2)] transition-all duration-300 no-underline"
+          >
+            <Download size={15} />
+            Download PDF
+          </a>
         </motion.div>
 
         {/* Socials */}
