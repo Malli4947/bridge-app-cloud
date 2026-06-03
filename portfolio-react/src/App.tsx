@@ -8,10 +8,13 @@ import About from '@/components/About';
 import Skills from '@/components/Skills';
 import Experience from '@/components/Experience';
 import Projects from '@/components/Projects';
+import FreelanceProjects from '@/components/FreelanceProjects';
+import Testimonials from '@/components/Testimonials';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import Toast from '@/components/Toast';
 import ChatBot from '@/components/ChatBot';
+import ScrollToTop from '@/components/ScrollToTop';
 
 export default function App() {
   const [toast, setToast] = useState<{ show: boolean; message: string }>({
@@ -75,12 +78,15 @@ export default function App() {
         <Skills />
         <Experience />
         <Projects />
+        <FreelanceProjects />
+        <Testimonials />
         <Contact onShowToast={showToast} />
       </main>
 
       <Footer />
       <Toast show={toast.show} message={toast.message} />
       <ChatBot />
+      <ScrollToTop />
     </>
   );
 }

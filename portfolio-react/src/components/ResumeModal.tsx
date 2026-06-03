@@ -66,7 +66,7 @@ export default function ResumeModal({ open, onClose }: ResumeModalProps) {
               <div className="flex items-center gap-2">
                 {/* Open in new tab */}
                 <a
-                  href="/Mallikarjuna_Rao_Lattupalli_Resume.pdf"
+                  href="/My_Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   title="Open PDF in new tab"
@@ -77,7 +77,7 @@ export default function ResumeModal({ open, onClose }: ResumeModalProps) {
                 </a>
                 {/* Download */}
                 <a
-                  href="/Mallikarjuna_Rao_Lattupalli_Resume.pdf"
+                  href="/My_Resume.pdf"
                   download="Mallikarjuna_Rao_Lattupalli_Resume.pdf"
                   title="Download PDF Resume"
                   className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-accent-cyan/10 border border-accent-cyan/30 text-accent-cyan text-xs font-mono hover:bg-accent-cyan hover:text-bg transition-all"

@@ -10,7 +10,7 @@ export default function About() {
     <section id="about" className="section-pad container-custom relative z-[2]">
       <SectionHeader num="02" title="About" accent="me" />
 
-      <div className="grid lg:grid-cols-[1.4fr_1fr] gap-16 items-start">
+      <div className="grid lg:grid-cols-[1.5fr_1fr] gap-x-12 gap-y-10 items-start">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -26,16 +26,25 @@ export default function About() {
             <strong className="bg-gradient-1 bg-clip-text text-transparent font-semibold">
               3+ years
             </strong>{' '}
-            of experience architecting and shipping scalable web, mobile, and full-stack
-            applications end-to-end.
+            architecting and shipping scalable <strong className="text-[#f4f4f8] font-semibold">websites,
+            admin dashboards, mobile apps, and full-stack platforms</strong> — owned end-to-end, from the
+            first wireframe to live production.
           </p>
 
           <p className="text-[1.05rem] text-muted mb-5 leading-[1.75]">
-            Currently at <span className="text-accent-amber font-medium">Code Facts IT Solutions</span> in
-            Hyderabad, engineered and shipped{' '}
-            <strong className="text-[#f4f4f8] font-semibold">9+ production apps</strong> live on Google
+            At <span className="text-accent-amber font-medium">Code Facts IT Solutions</span> in
+            Hyderabad, I engineered and shipped{' '}
+            <strong className="text-[#f4f4f8] font-semibold">9+ production apps</strong> live on the Google
             Play Store and Apple App Store — spanning service marketplaces, e-commerce, real estate,
             on-demand delivery, ride-booking, and B2B platforms.
+          </p>
+
+          <p className="text-[1.05rem] text-muted mb-5 leading-[1.75]">
+            Beyond that, I design and deliver{' '}
+            <strong className="text-[#f4f4f8] font-semibold">freelance websites &amp; storefronts</strong>{' '}
+            for real business clients — handling everything from UI/UX design and front-end build to
+            deployment. <span className="text-accent-amber font-medium">You bring the vision; I design it,
+            build it, and take it live.</span>
           </p>
 
           <p className="text-[1.05rem] text-muted mb-5 leading-[1.75]">
@@ -61,12 +70,14 @@ export default function About() {
           <div className="flex flex-wrap gap-2 mt-8">
             {[
               'Full-Stack Engineer',
+              'Web & Mobile',
+              'Admin Dashboards',
               'React & React Native',
               'API Architect',
+              'Freelance Developer',
+              'Design to Deployment',
               'Performance Nerd',
-              'Mobile-First',
               'Production Owner',
-              'Agile Collaborator',
             ].map((tag) => (
               <span
                 key={tag}
@@ -78,10 +89,36 @@ export default function About() {
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-2 gap-4">
-          {stats.map((stat, i) => (
-            <StatCard key={stat.label} stat={stat} delay={i * 0.1} />
-          ))}
+        <div className="flex flex-col gap-4 w-full lg:max-w-[300px] lg:mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            className="group relative rounded-2xl overflow-hidden border border-white/10 bg-bg-card"
+          >
+            <img
+              src="/MyImage.jpeg"
+              alt="Mallikarjuna Rao Lattupalli"
+              className="w-full aspect-[991/1280] object-cover object-center transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/20 to-transparent" />
+            <div className="absolute bottom-4 left-4 right-4">
+              <p className="font-display font-semibold text-[#f4f4f8] leading-tight">
+                Mallikarjuna Rao Lattupalli
+              </p>
+              <span className="inline-flex items-center gap-1.5 mt-1.5 px-2.5 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-[0.65rem] font-mono text-emerald-300">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                Available for Full-Time &amp; Freelance
+              </span>
+            </div>
+          </motion.div>
+
+          <div className="grid grid-cols-2 gap-4">
+            {stats.map((stat, i) => (
+              <StatCard key={stat.label} stat={stat} delay={i * 0.1} />
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -127,7 +164,7 @@ function StatCard({ stat, delay }: { stat: Stat; delay: number }) {
       />
       <div
         className="font-display font-bold leading-none mb-2 bg-gradient-1 bg-clip-text text-transparent"
-        style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)' }}
+        style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.4rem)' }}
       >
         {count}
         {stat.suffix}

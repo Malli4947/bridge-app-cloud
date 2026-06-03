@@ -42,9 +42,13 @@ export default function Navigation() {
             e.preventDefault();
             handleScrollTo('#home');
           }}
-          className="flex items-center gap-2 font-display font-bold text-xl no-underline tracking-tight text-[#f4f4f8]"
+          className="flex items-center gap-2.5 font-display font-bold text-xl no-underline tracking-tight text-[#f4f4f8]"
         >
-          <span className="inline-block animate-spin">⚡</span>
+          <img
+            src="/MyImage.jpeg"
+            alt="Mallikarjuna Rao Lattupalli"
+            className="w-9 h-9 rounded-full object-cover object-top border-2 border-accent-cyan/40 flex-shrink-0"
+          />
           <span>
             Mallikarjuna Rao<span className="gradient-text">.dev</span>
           </span>

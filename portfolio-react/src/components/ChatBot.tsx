@@ -1,10 +1,18 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageCircle, X, Send, Bot, User, ExternalLink, RotateCcw } from 'lucide-react';
-import { projects, skillCategories, experiences, personalInfo, stats } from '@/data/portfolio';
+import { X, Send, Bot, User, ExternalLink, RotateCcw } from 'lucide-react';
+import {
+  projects,
+  freelanceProjects,
+  testimonials,
+  skillCategories,
+  experiences,
+  personalInfo,
+  stats,
+} from '@/data/portfolio';
 
 // ─── Types ────────────────────────────────────────────────────────
-type CardType = 'skills' | 'projects' | 'about' | 'contact' | 'experience';
+type CardType = 'skills' | 'projects' | 'freelance' | 'reviews' | 'about' | 'contact' | 'experience';
 
 interface Message {
   id: number;
@@ -19,6 +27,8 @@ interface Message {
 const QUICK_REPLIES = [
   { label: '🛠 Skills',       query: 'skills' },
   { label: '📦 Projects',     query: 'projects' },
+  { label: '🌐 Freelance',    query: 'freelance projects' },
+  { label: '⭐ Reviews',      query: 'client reviews' },
   { label: '👤 About',        query: 'about' },
   { label: '💼 Experience',   query: 'experience' },
   { label: '📬 Contact',      query: 'contact' },
@@ -41,6 +51,24 @@ function getResponse(input: string): Message {
   // Thanks
   if (/\b(thank|thanks|thx|ty|thank you)\b/.test(q)) {
     return { id, from: 'bot', text: "You're welcome! 😊 Feel free to ask anything else about Mallikarjuna." };
+  }
+
+  // Client reviews / testimonials
+  if (/review|testimonial|feedback|rating|recommend|what.*(client|customer)|(client|customer).*(say|said|think)|happy client|word of mouth/.test(q)) {
+    return {
+      id, from: 'bot', card: 'reviews',
+      text: "Here's what Mallikarjuna's freelance clients say about working with him ⭐",
+      cardData: testimonials,
+    };
+  }
+
+  // Freelance projects (independent client & self-initiated web work)
+  if (/freelanc|client (work|website|site|project)|own design|own code|prime pro|prime project|mk estate|aerovexa|exim|fashionly|shoporbit|restaurant (site|website)|jewell?ery|jewelry|web design|websites|vercel/.test(q)) {
+    return {
+      id, from: 'bot', card: 'freelance',
+      text: "Here are Mallikarjuna's freelance projects — designed & coded end to end, from concept to live deployment 🌐",
+      cardData: freelanceProjects,
+    };
   }
 
   // Skills
@@ -92,7 +120,7 @@ function getResponse(input: string): Message {
   if (/availab|free|open to work|hire|hiring|freelance|full.?time|connect|reach out|opportunity|opportunities/.test(q)) {
     return {
       id, from: 'bot', card: 'contact',
-      text: `🟢 I'm always available! Feel free to connect with Mallikarjuna anytime through:\n\n• ✉️ Email — ${personalInfo.email}\n• 💼 LinkedIn — ${personalInfo.linkedinHandle}\n• 🐙 GitHub — ${personalInfo.githubHandle}\n\nHe responds within 24 hours and is open to full-time roles, freelance projects, and collaborations.`,
+      text: `🟢 Available for Full-Time & Freelance! Feel free to connect with Mallikarjuna anytime through:\n\n• ✉️ Email — ${personalInfo.email}\n• 💼 LinkedIn — ${personalInfo.linkedinHandle}\n• 🐙 GitHub — ${personalInfo.githubHandle}\n\nHe responds within 24 hours and is open to full-time roles, freelance projects, and collaborations.`,
       cardData: personalInfo,
     };
   }
@@ -100,7 +128,7 @@ function getResponse(input: string): Message {
   // Off-topic — politely decline
   return {
     id, from: 'bot',
-    text: `Hey! 👋 I'm Malli's AI assistant and I only share information about Mallikarjuna Rao — his skills, projects, work experience, and contact details.\n\nI'm not able to help with other topics. Try asking me:\n• "What are his skills?"\n• "Show me his projects"\n• "How to contact him?"`,
+    text: `Hey! 👋 I'm Malli's AI assistant and I only share information about Mallikarjuna Rao — his skills, projects, freelance work, client reviews, experience, and contact details.\n\nI'm not able to help with other topics. Try asking me:\n• "What are his skills?"\n• "Show me his projects"\n• "Show his freelance projects"\n• "What do clients say about him?"\n• "How to contact him?"`,
   };
 }
 
@@ -119,6 +147,11 @@ export default function ChatBot() {
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages, open]);
+
+  // Let other floating UI (e.g. scroll-to-top) react to the chat being open
+  useEffect(() => {
+    window.dispatchEvent(new CustomEvent('chatbot:toggle', { detail: { open } }));
+  }, [open]);
 
   const send = (text: string) => {
     if (!text.trim()) return;
@@ -146,7 +179,7 @@ export default function ChatBot() {
         <AnimatePresence mode="wait">
           {open
             ? <motion.span key="x"   initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90,  opacity: 0 }} transition={{ duration: 0.2 }}><X size={22} /></motion.span>
-            : <motion.span key="msg" initial={{ rotate:  90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.2 }}><MessageCircle size={22} /></motion.span>
+            : <motion.span key="bot" initial={{ rotate:  90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.2 }}><Bot size={24} /></motion.span>
           }
         </AnimatePresence>
       </motion.button>
@@ -256,6 +289,8 @@ function MessageBubble({ msg }: { msg: Message }) {
         {/* Rich cards */}
         {isBot && msg.card === 'skills'     && <SkillsCard     data={msg.cardData} />}
         {isBot && msg.card === 'projects'   && <ProjectsCard   data={msg.cardData} />}
+        {isBot && msg.card === 'freelance'  && <FreelanceCard  data={msg.cardData} />}
+        {isBot && msg.card === 'reviews'    && <ReviewsCard    data={msg.cardData} />}
         {isBot && msg.card === 'about'      && <AboutCard      data={msg.cardData} />}
         {isBot && msg.card === 'contact'    && <ContactCard    data={msg.cardData} />}
         {isBot && msg.card === 'experience' && <ExperienceCard data={msg.cardData} />}
@@ -314,16 +349,82 @@ function ProjectsCard({ data }: { data: typeof projects }) {
   );
 }
 
+// ─── Freelance Card ───────────────────────────────────────────────
+function FreelanceCard({ data }: { data: typeof freelanceProjects }) {
+  return (
+    <div className="w-full space-y-2">
+      {data.map((p: typeof freelanceProjects[0]) => (
+        <div key={p.key} className="bg-white/[0.04] border border-white/10 rounded-xl p-3">
+          <div className="flex items-center gap-2 mb-1">
+            <span className="text-lg">{p.icon}</span>
+            <div className="flex-1 min-w-0">
+              <p className="text-sm font-semibold text-[#f4f4f8] truncate">{p.title}</p>
+              <p className="text-[0.65rem] text-accent-amber font-mono">{p.category} · {p.year}</p>
+            </div>
+          </div>
+          {p.client && (
+            <p className="text-[0.65rem] text-accent-cyan mb-1">👤 Client · {p.client}</p>
+          )}
+          <p className="text-[0.72rem] text-muted leading-relaxed mb-2">{p.description}</p>
+          <div className="flex flex-wrap gap-1 mb-2">
+            {p.tags.map(t => (
+              <span key={t} className="text-[0.65rem] px-2 py-0.5 bg-accent-purple/10 text-accent-purple rounded border border-accent-purple/20">{t}</span>
+            ))}
+          </div>
+          <LinkChip href={p.url} label="Visit Live Site" />
+        </div>
+      ))}
+    </div>
+  );
+}
+
+// ─── Reviews Card ─────────────────────────────────────────────────
+function ReviewsCard({ data }: { data: typeof testimonials }) {
+  return (
+    <div className="w-full space-y-2">
+      {data.map((t: typeof testimonials[0]) => (
+        <div key={t.key} className="bg-white/[0.04] border border-white/10 rounded-xl p-3">
+          <div className="flex items-center gap-2 mb-1.5">
+            <div
+              className="w-8 h-8 rounded-full flex items-center justify-center text-[0.65rem] font-bold text-white flex-shrink-0"
+              style={{ background: `linear-gradient(135deg, ${t.accent}, ${t.accent}cc)` }}
+            >
+              {t.initials}
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className="text-sm font-semibold text-[#f4f4f8] truncate">{t.name}</p>
+              <p className="text-[0.65rem] text-muted truncate">{t.role}</p>
+            </div>
+            <span className="text-[0.7rem] text-accent-amber tracking-tight">{'★'.repeat(t.rating)}</span>
+          </div>
+          <p className="text-[0.72rem] text-muted leading-relaxed italic">“{t.quote}”</p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 // ─── About Card ───────────────────────────────────────────────────
 function AboutCard({ data }: { data: { personalInfo: typeof personalInfo; stats: typeof stats } }) {
   const { personalInfo: info, stats: s } = data;
   return (
     <div className="w-full bg-white/[0.04] border border-white/10 rounded-xl p-4 space-y-3">
-      <div>
-        <p className="font-bold text-[#f4f4f8]">{info.name}</p>
-        <p className="text-[0.75rem] text-accent-cyan">{info.role}</p>
-        <p className="text-[0.72rem] text-muted mt-1">📍 {info.location}</p>
+      <div className="flex items-center gap-3">
+        <img
+          src="/MyImage.jpeg"
+          alt={info.name}
+          className="w-12 h-12 rounded-full object-cover object-top border-2 border-accent-cyan/40 flex-shrink-0"
+        />
+        <div className="min-w-0">
+          <p className="font-bold text-[#f4f4f8] leading-tight">{info.name}</p>
+          <p className="text-[0.75rem] text-accent-cyan">{info.role}</p>
+          <p className="text-[0.7rem] text-muted mt-0.5">📍 {info.location}</p>
+        </div>
       </div>
+      <p className="text-[0.7rem] text-emerald-300 flex items-center gap-1.5">
+        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+        Available for Full-Time &amp; Freelance
+      </p>
       <div className="grid grid-cols-2 gap-2">
         {s.map((stat: typeof stats[0]) => (
           <div key={stat.label} className="bg-white/[0.04] rounded-lg p-2 text-center border border-white/10">

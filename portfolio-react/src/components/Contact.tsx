@@ -92,7 +92,7 @@ export default function Contact({ onShowToast }: Props) {
           <div className="flex items-center gap-3 px-4 py-3 mb-6 rounded-xl bg-emerald-500/[0.07] border border-emerald-500/20">
             <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 flex-shrink-0 shadow-[0_0_8px_rgba(52,211,153,0.6)] animate-pulse" />
             <p className="text-sm text-emerald-300 leading-snug">
-              I'm <strong>always available</strong> — feel free to connect anytime via Email, LinkedIn, or GitHub.
+              <strong>Available for Full-Time &amp; Freelance</strong> — feel free to connect anytime via Email, LinkedIn, or GitHub.
             </p>
           </div>
 

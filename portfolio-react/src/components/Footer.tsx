@@ -15,6 +15,8 @@ const quickLinks = [
   { href: '#skills', label: 'Skills' },
   { href: '#experience', label: 'Experience' },
   { href: '#projects', label: 'Projects' },
+  { href: '#freelance', label: 'Freelance' },
+  { href: '#reviews', label: 'Reviews' },
   { href: '#contact', label: 'Contact' },
 ];
 
@@ -120,12 +122,18 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="font-display text-2xl font-bold mb-3 flex items-center gap-2 justify-center md:justify-start">
-              <span className="inline-block animate-spin">⚡</span>
-              <span>
-                Mallikarjuna Rao
-                <span className="gradient-text">.dev</span>
-              </span>
+            <div className="flex items-center gap-3 mb-4 justify-center md:justify-start">
+              <img
+                src="/MyImage.jpeg"
+                alt="Mallikarjuna Rao Lattupalli"
+                className="w-12 h-12 rounded-full object-cover object-top border-2 border-accent-cyan/40 flex-shrink-0"
+              />
+              <div className="font-display text-2xl font-bold flex items-center gap-2">
+                <span>
+                  Mallikarjuna Rao
+                  <span className="gradient-text">.dev</span>
+                </span>
+              </div>
             </div>
             <p className="text-muted text-[0.95rem] leading-relaxed mb-4">
               Senior Software Engineer building scalable, production-ready web and mobile
@@ -137,7 +145,7 @@ export default function Footer() {
                 className="relative w-2 h-2 bg-emerald-500 rounded-full"
                 style={{ animation: 'pulse-ring 2s infinite' }}
               />
-              Available for new opportunities
+              Available for Full-Time &amp; Freelance
             </div>
           </motion.div>
           <motion.div

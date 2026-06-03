@@ -1,4 +1,12 @@
-import type { Project, SkillCategory, Experience, NavLink, Stat } from '@/types';
+import type {
+  Project,
+  FreelanceProject,
+  Testimonial,
+  SkillCategory,
+  Experience,
+  NavLink,
+  Stat,
+} from '@/types';
 
 export const projects: Project[] = [
   {
@@ -232,6 +240,182 @@ export const projects: Project[] = [
   },
 ];
 
+export const freelanceProjects: FreelanceProject[] = [
+  {
+    key: 'prime-projects',
+    icon: '🏡',
+    title: 'Prime Pro Projects',
+    category: 'Real Estate & Construction',
+    year: '2026',
+    bg: 'linear-gradient(135deg, #1a2b4a 0%, #c9a84c 100%)',
+    tagline: 'Building trust, brick by brick.',
+    description:
+      'Corporate website for a construction & infrastructure company — presenting their services, completed builds, and a clean lead-inquiry flow. Designed and developed end to end with a bold, professional brand identity.',
+    highlights: [
+      'Services & capabilities showcase',
+      'Completed-projects gallery',
+      'Lead inquiry & contact flow',
+      'Strong corporate brand identity',
+    ],
+    tags: ['React', 'Tailwind CSS', 'Framer Motion', 'Responsive', 'Vercel'],
+    client: 'Prashanth Reddy',
+    url: 'https://prime-pro-project.vercel.app/',
+  },
+ 
+  {
+    key: 'aerovexa-exim',
+    icon: '🌍',
+    title: 'Aerovexa Exim',
+    category: 'Import & Export Trading',
+    year: '2026',
+    bg: 'linear-gradient(135deg, #003295 0%, #d4af37 100%)',
+    tagline: 'Global trade, end to end.',
+    description:
+      'Corporate website for Aerovexa Exim Pvt. Ltd., a diversified import–export & supply-chain company trading across Electronics, Agriculture, Jewellery, and Logistics. Built to convey global-trade credibility with clear sector divisions.',
+    highlights: [
+      '4 verticals — Electronics, Agri, Jewellery, Logistics',
+      'Global trade & supply-chain services',
+      'Sector-wise product divisions',
+      'Partnership & enquiry contact flow',
+    ],
+    tags: ['React', 'Tailwind CSS', 'Multi-section', 'Responsive', 'Vercel'],
+    client: 'Vishnu Vardhan Reddy',
+    url: 'https://aerovexa-exim.vercel.app/',
+  },
+   {
+    key: 'mk-estates',
+    icon: '🏡',
+    title: 'MK Estates',
+    category: 'Premium Real Estate',
+    year: '2026',
+    bg: 'linear-gradient(135deg, #2e7d32 0%, #d4af37 100%)',
+    tagline: 'Premium real estate in Hyderabad.',
+    description:
+      'Premium real estate platform for the Hyderabad market — featuring upscale residential & commercial property listings, image-rich project galleries, and lead-capture enquiry forms with a refined, high-end presentation.',
+    highlights: [
+      'Residential & commercial listings',
+      'Image-rich project galleries',
+      'Enquiry & lead-capture forms',
+      'Polished premium presentation',
+    ],
+    tags: ['React', 'Tailwind CSS', 'Animations', 'Responsive', 'Vercel'],
+    client: 'Malli',
+    url: 'https://mkestates.vercel.app/',
+  },
+  {
+    key: 'fashionly',
+    icon: '🛍',
+    title: 'Fashionly',
+    category: 'Fashion E-Commerce',
+    year: '2026',
+    bg: 'linear-gradient(135deg, #db2777 0%, #9333ea 100%)',
+    tagline: 'New-season drops, every week.',
+    description:
+      'Full fashion storefront for Men, Women & Kids apparel — with category browsing, product pages featuring ratings and discounted pricing, cart & quick-add, plus promo codes, free shipping and 30-day returns. Designed and built from scratch.',
+    highlights: [
+      'Men, Women & Kids departments',
+      'Product ratings & discount pricing',
+      'Cart & quick-add purchasing',
+      'Promo codes, free shipping & returns',
+    ],
+    tags: ['React', 'Tailwind CSS', 'Cart', 'State Management', 'Responsive'],
+    url: 'https://shopping-website-murex-sigma.vercel.app/',
+  },
+  {
+    key: 'shoporbit',
+    icon: '🪐',
+    title: 'ShopOrbit',
+    category: 'E-Commerce Marketplace',
+    year: '2026',
+    bg: 'linear-gradient(135deg, #0d0820 0%, #7c5cff 100%)',
+    tagline: 'Everything you need, in orbit.',
+    description:
+      'Multi-category online marketplace built around the tagline "Everything you need, in orbit." A broad retail storefront with product browsing, dynamic cart state, search & filtering, and a fast, checkout-ready experience.',
+    highlights: [
+      'Multi-category product catalog',
+      'Dynamic cart & order summary',
+      'Search & category filtering',
+      'Conversion-focused responsive UI',
+    ],
+    tags: ['React', 'Tailwind CSS', 'Cart', 'Filters', 'Responsive'],
+    url: 'https://e-commerce-iota-seven-50.vercel.app/',
+  },
+  {
+    key: 'mk-restaurant',
+    icon: '🍽',
+    title: 'MK Restaurant',
+    category: 'Restaurant & Online Ordering',
+    year: '2026',
+    bg: 'linear-gradient(135deg, #2e7d32 0%, #c62828 100%)',
+    tagline: 'Authentic seafood, biryani & more.',
+    description:
+      'Online ordering website for a Hyderabad restaurant serving 140+ fresh dishes across seafood, veg, non-veg, biryani & tiffins. Includes menu browsing, cart, an order flow, and direct WhatsApp ordering — open daily 11 AM to 11 PM.',
+    highlights: [
+      '140+ dishes across 5 categories',
+      'Menu, Cart & Orders flow',
+      'Direct WhatsApp order integration',
+      'Profile & order history',
+    ],
+    tags: ['React', 'Tailwind CSS', 'Cart', 'WhatsApp API', 'Responsive'],
+    url: 'https://restaurant-website-orpin-three.vercel.app/',
+  },
+  {
+    key: 'mk-jewellery',
+    icon: '💎',
+    title: 'MK Jewellery',
+    category: 'Luxury Jewellery',
+    year: '2026',
+    bg: 'linear-gradient(135deg, #140e07 0%, #c79a2e 100%)',
+    tagline: 'Timeless elegance, crafted to shine.',
+    description:
+      'Elegant jewellery showcase built around the theme "Timeless Elegance" — featuring curated collections, refined product galleries, and a premium luxury aesthetic crafted to make every piece shine.',
+    highlights: [
+      'Curated collection showcase',
+      'Elegant product galleries',
+      '"Timeless Elegance" brand theme',
+      'Polished luxury aesthetic',
+    ],
+    tags: ['React', 'Tailwind CSS', 'Animations', 'Responsive', 'Vercel'],
+    url: 'https://jewellery-omega-orcin.vercel.app/',
+  },
+];
+
+export const testimonials: Testimonial[] = [
+  {
+    key: 'prashanth-reddy',
+    name: 'Prashanth Reddy',
+    role: 'Founder',
+    project: 'Prime Pro Projects',
+    initials: 'PR',
+    rating: 5,
+    accent: '#c9a84c',
+    quote:
+      'Mallikarjuna designed and built our entire Prime Pro Projects website from scratch — concept to deployment. It is clean, professional, and perfectly represents our construction brand. Reliable, detail-oriented, and delivered exactly on time.',
+  },
+  {
+    key: 'vishnu-vardhan-reddy',
+    name: 'Vishnu Vardhan Reddy',
+    role: 'Director',
+    project: 'Aerovexa Exim',
+    initials: 'VV',
+    rating: 5,
+    accent: '#06b6d4',
+    quote:
+      'He delivered our Aerovexa import–export site end to end. Great communication, a modern design, and fully responsive across every device. He understood our vision and brought it to life better than we imagined.',
+  },
+  {
+    key: 'malli-mk',
+    name: 'Malli',
+    role: 'Owner',
+    project: 'MK Estates',
+    initials: 'MK',
+    rating: 5,
+    accent: '#10b981',
+    quote:
+      'The MK Estates site looks premium and loads fast. Arjun handled the complete design and development independently and was a genuine pleasure to work with throughout the project.',
+  },
+];
+
 export const skillCategories: SkillCategory[] = [
   {
     category: 'frontend',
@@ -337,7 +521,7 @@ export const devPractices: { name: string; logo: string; color: string }[] = [
 
 export const experiences: Experience[] = [
   {
-    date: 'Jan 2023 — Present',
+    date: 'Jan 2023 — 2026',
     title: 'Senior Software Engineer',
     company: 'Code Facts IT Solutions Pvt. Ltd.',
     location: '📍 Hyderabad, Telangana, India',
@@ -388,7 +572,9 @@ export const navLinks: NavLink[] = [
   { href: '#skills', label: 'Skills', num: '03', section: 'skills' },
   { href: '#experience', label: 'Work', num: '04', section: 'experience' },
   { href: '#projects', label: 'Projects', num: '05', section: 'projects' },
-  { href: '#contact', label: 'Contact', num: '06', section: 'contact' },
+  { href: '#freelance', label: 'Freelance', num: '06', section: 'freelance' },
+  { href: '#reviews', label: 'Reviews', num: '07', section: 'reviews' },
+  { href: '#contact', label: 'Contact', num: '08', section: 'contact' },
 ];
 
 export const stats: Stat[] = [

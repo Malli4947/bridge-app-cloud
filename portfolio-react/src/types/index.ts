@@ -25,6 +25,32 @@ export interface ProjectFeature {
   desc: string;
 }
 
+export interface FreelanceProject {
+  key: string;
+  icon: string;
+  title: string;
+  category: string;
+  tagline: string;
+  description: string;
+  highlights: string[];
+  tags: string[];
+  bg: string;
+  url: string;
+  client?: string;
+  year: string;
+}
+
+export interface Testimonial {
+  key: string;
+  name: string;
+  role: string;
+  project: string;
+  quote: string;
+  initials: string;
+  rating: number;
+  accent: string;
+}
+
 export interface Skill {
   name: string;
   level?: 'Expert' | 'Advanced' | 'Intermediate';

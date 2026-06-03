@@ -52,7 +52,7 @@ export default function Hero() {
             className="relative w-2 h-2 bg-emerald-500 rounded-full"
             style={{ animation: 'pulse-ring 2s infinite' }}
           />
-          Senior Software Engineer · Open to Opportunities
+          Available for Full-Time &amp; Freelance
         </motion.div>
         <h1
           className="font-display font-bold tracking-[-0.04em] mb-8"
@@ -102,9 +102,10 @@ export default function Hero() {
           className="text-muted text-base lg:text-lg max-w-xl leading-relaxed mb-8"
         >
           Senior Software Engineer with{' '}
-          <strong className="text-[#f4f4f8] font-semibold">3+ years</strong> shipping React Native &amp;
-          full-stack apps. <strong className="text-[#f4f4f8] font-semibold">9+ production apps</strong>{' '}
-          live on Google Play and Apple App Store.
+          <strong className="text-[#f4f4f8] font-semibold">3+ years</strong> turning ideas into{' '}
+          <strong className="text-[#f4f4f8] font-semibold">production-ready websites, admin dashboards &amp; mobile apps</strong> —
+          designed, built &amp; shipped end-to-end.{' '}
+          <span className="gradient-text font-semibold">You bring the vision. I engineer it, ship it, and bring it to life.</span>
         </motion.p>
 
         {/* Meta strip */}
@@ -161,7 +162,7 @@ export default function Hero() {
           className="flex flex-wrap gap-3 mb-10"
         >
           <a
-            href="/Mallikarjuna_Rao_Lattupalli_Resume.pdf"
+            href="/My_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-accent-cyan/40 text-accent-cyan text-sm font-display font-semibold hover:bg-accent-cyan/10 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(6,212,212,0.2)] transition-all duration-300 no-underline"
@@ -170,7 +171,7 @@ export default function Hero() {
             View Resume
           </a>
           <a
-            href="/Mallikarjuna_Rao_Lattupalli_Resume.pdf"
+            href="/My_Resume.pdf"
             download="Mallikarjuna_Rao_Lattupalli_Resume.pdf"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-accent-purple/40 text-accent-purple text-sm font-display font-semibold hover:bg-accent-purple/10 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(168,85,247,0.2)] transition-all duration-300 no-underline"
           >
@@ -266,22 +267,22 @@ function SocialLink({
 
 function RotatingBadge() {
   return (
-    <div className="relative w-[200px] h-[200px] flex items-center justify-center">
-      <svg viewBox="0 0 200 200" className="w-full h-full text-accent-cyan animate-spin-slow">
-        <defs>
-          <path
-            id="circlePath"
-            d="M 100, 100 m -75, 0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0"
+    <div className="relative w-full max-w-[300px] mx-auto">
+      {/* Full portrait photo — aspect ratio matches the image so nothing is cropped */}
+      <div className="relative rounded-3xl p-[3px] bg-gradient-1 shadow-[0_20px_55px_rgba(6,212,212,0.3)]">
+        <div className="relative rounded-[1.35rem] overflow-hidden bg-bg-card">
+          <img
+            src="/MyImage.jpeg"
+            alt="Mallikarjuna Rao Lattupalli"
+            className="w-full aspect-[991/1280] object-cover object-center"
           />
-        </defs>
-        <text fontFamily="Bricolage Grotesque" fontSize="14" fill="currentColor" letterSpacing="3">
-          <textPath href="#circlePath">
-            SENIOR ENGINEER · REACT NATIVE · FULL STACK · REACT NATIVE ·{' '}
-          </textPath>
-        </text>
-      </svg>
-      <div className="absolute w-[70px] h-[70px] bg-gradient-1 rounded-full flex items-center justify-center text-3xl shadow-[0_0_40px_rgba(6,212,212,0.5)] animate-float">
-        ⚡
+
+          {/* Availability badge */}
+          <span className="absolute top-3 left-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-bg/85 backdrop-blur-md border border-emerald-500/40 text-[0.65rem] font-mono text-emerald-300 shadow-lg">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            Available
+          </span>
+        </div>
       </div>
     </div>
   );
