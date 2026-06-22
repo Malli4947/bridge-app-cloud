@@ -43,7 +43,7 @@ export default function ScrollToTop() {
           whileTap={{ scale: 0.9 }}
           aria-label="Scroll to top"
           title="Back to top"
-          className="fixed bottom-24 right-6 z-[999] w-12 h-12 rounded-full bg-bg-card/90 backdrop-blur-md border border-accent-cyan/40 text-accent-cyan flex items-center justify-center shadow-[0_8px_30px_rgba(6,212,212,0.25)] hover:bg-accent-cyan hover:text-bg hover:border-accent-cyan transition-colors cursor-none"
+          className="fixed bottom-24 right-4 sm:right-6 z-[999] w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-bg-card/90 backdrop-blur-md border border-accent-cyan/40 text-accent-cyan flex items-center justify-center shadow-[0_8px_30px_rgba(6,212,212,0.25)] hover:bg-accent-cyan hover:text-bg hover:border-accent-cyan transition-colors cursor-pointer lg:cursor-none"
         >
           <ArrowUp size={20} />
         </motion.button>

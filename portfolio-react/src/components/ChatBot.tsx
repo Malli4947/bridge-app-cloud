@@ -174,7 +174,7 @@ export default function ChatBot() {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         aria-label="Open chat assistant"
-        className="fixed bottom-6 right-6 z-[999] w-14 h-14 rounded-full bg-gradient-to-br from-accent-cyan to-accent-purple shadow-[0_8px_30px_rgba(6,212,212,0.4)] flex items-center justify-center text-white cursor-none"
+        className="fixed bottom-5 right-4 sm:bottom-6 sm:right-6 z-[999] w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-gradient-to-br from-accent-cyan to-accent-purple shadow-[0_8px_30px_rgba(6,212,212,0.4)] flex items-center justify-center text-white cursor-pointer lg:cursor-none"
       >
         <AnimatePresence mode="wait">
           {open
@@ -192,7 +192,7 @@ export default function ChatBot() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed bottom-24 right-6 z-[998] w-[380px] max-w-[calc(100vw-2rem)] h-[580px] max-h-[calc(100vh-8rem)] bg-bg-card border border-white/15 rounded-2xl shadow-[0_30px_80px_rgba(0,0,0,0.5)] flex flex-col overflow-hidden"
+            className="fixed bottom-20 sm:bottom-24 right-3 sm:right-6 z-[998] w-[calc(100vw-1.5rem)] sm:w-[380px] max-w-[420px] h-[70vh] sm:h-[580px] max-h-[calc(100vh-7rem)] bg-bg-card border border-white/15 rounded-2xl shadow-[0_30px_80px_rgba(0,0,0,0.5)] flex flex-col overflow-hidden"
           >
             {/* Header */}
             <div className="flex items-center gap-3 px-5 py-4 border-b border-white/10 bg-gradient-to-r from-accent-cyan/10 to-accent-purple/10 flex-shrink-0">

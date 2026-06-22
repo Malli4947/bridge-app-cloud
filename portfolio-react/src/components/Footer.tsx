@@ -88,19 +88,19 @@ export default function Footer() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6 }}
-          className="mb-16 p-8 lg:p-10 rounded-3xl bg-gradient-to-br from-accent-cyan/10 via-bg-card to-accent-purple/10 border border-white/10 flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden"
+          className="mb-10 sm:mb-16 p-6 sm:p-8 lg:p-10 rounded-3xl bg-gradient-to-br from-accent-cyan/10 via-bg-card to-accent-purple/10 border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-5 sm:gap-6 relative overflow-hidden"
         >
           <div className="absolute -top-20 -right-20 w-60 h-60 bg-accent-cyan/10 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-accent-purple/10 rounded-full blur-3xl pointer-events-none" />
 
-          <div className="relative z-[2] text-center md:text-left">
-            <h3 className="font-display text-2xl lg:text-3xl font-bold mb-2 leading-tight">
-              Got a project in mind?
+          <div className="relative z-[2] text-center sm:text-left">
+            <h3 className="font-display text-xl sm:text-2xl lg:text-3xl font-bold mb-2 leading-tight">
+              Have a project or role in mind?
               <br />
-              <span className="gradient-text">Let's build something great.</span>
+              <span className="gradient-text">Let's ship it together.</span>
             </h3>
             <p className="text-muted text-sm lg:text-base">
-              Open to full-time roles, freelance projects, and interesting collaborations.
+              React Native · MERN Stack · Full-Time &amp; Freelance · Hyderabad · Remote Ready
             </p>
           </div>
 
@@ -115,20 +115,20 @@ export default function Footer() {
           </motion.button>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-10 lg:gap-16 text-center md:text-left mb-12">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10 lg:gap-16 text-center sm:text-left mb-10 sm:mb-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="flex items-center gap-3 mb-4 justify-center md:justify-start">
+            <div className="flex items-center gap-3 mb-4 justify-center sm:justify-start flex-wrap">
               <img
                 src="/MyImage.jpeg"
                 alt="Mallikarjuna Rao Lattupalli"
                 className="w-12 h-12 rounded-full object-cover object-top border-2 border-accent-cyan/40 flex-shrink-0"
               />
-              <div className="font-display text-2xl font-bold flex items-center gap-2">
+              <div className="font-display text-lg sm:text-2xl font-bold">
                 <span>
                   Mallikarjuna Rao
                   <span className="gradient-text">.dev</span>
@@ -136,8 +136,8 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-muted text-[0.95rem] leading-relaxed mb-4">
-              Senior Software Engineer building scalable, production-ready web and mobile
-              applications. 9+ apps shipped on Play Store &amp; App Store.
+              Senior Software Engineer specialising in <span className="text-accent-cyan">React Native</span> &amp; <span className="text-accent-cyan">MERN Stack</span> —{' '}
+              9+ production apps live on the App Store &amp; Play Store.
             </p>
 
             <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-emerald-500/10 border border-emerald-500/30 rounded-full text-xs font-mono text-emerald-400">
@@ -155,7 +155,7 @@ export default function Footer() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="md:pl-4"
           >
-            <h4 className="font-display font-semibold mb-5 text-[#f4f4f8] flex items-center gap-2 justify-center md:justify-start">
+            <h4 className="font-display font-semibold mb-5 text-[#f4f4f8] flex items-center gap-2 justify-center sm:justify-start">
               <span className="w-1 h-4 bg-gradient-1 rounded-full" />
               Quick Links
             </h4>
@@ -164,7 +164,7 @@ export default function Footer() {
                 <button
                   key={link.href}
                   onClick={() => handleScrollTo(link.href)}
-                  className="group flex items-center gap-2 hover:text-accent-cyan transition-colors w-fit cursor-none mx-auto md:mx-0"
+                  className="group flex items-center gap-2 hover:text-accent-cyan transition-colors w-fit cursor-pointer lg:cursor-none mx-auto sm:mx-0"
                 >
                   <span className="font-mono text-[0.7rem] text-dim group-hover:text-accent-cyan transition-colors">
                     {String(i + 1).padStart(2, '0')}
@@ -181,12 +181,12 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h4 className="font-display font-semibold mb-5 text-[#f4f4f8] flex items-center gap-2 justify-center md:justify-start">
+            <h4 className="font-display font-semibold mb-5 text-[#f4f4f8] flex items-center gap-2 justify-center sm:justify-start">
               <span className="w-1 h-4 bg-gradient-1 rounded-full" />
               Connect
             </h4>
 
-            <div className="flex justify-center md:justify-start gap-3 flex-wrap mb-5">
+            <div className="flex justify-center sm:justify-start gap-3 flex-wrap mb-5">
               {socials.map((item) => (
                 <motion.a
                   key={item.label}
@@ -209,7 +209,7 @@ export default function Footer() {
             <div className="space-y-2.5 text-sm text-muted">
               <a
                 href="mailto:mrao.developer@gmail.com"
-                className="group flex items-center gap-2.5 justify-center md:justify-start hover:text-accent-cyan transition-colors cursor-none"
+                className="group flex items-center gap-2.5 justify-center sm:justify-start hover:text-accent-cyan transition-colors cursor-pointer lg:cursor-none"
               >
                 <span className="w-7 h-7 rounded-md bg-white/[0.04] border border-white/10 flex items-center justify-center group-hover:border-accent-cyan group-hover:bg-accent-cyan/10 transition-colors">
                   <Mail className="w-3.5 h-3.5" />
@@ -217,14 +217,14 @@ export default function Footer() {
                 mrao.developer@gmail.com
               </a>
               <a
-                className="group flex items-center gap-2.5 justify-center md:justify-start hover:text-accent-cyan transition-colors cursor-none"
+                className="group flex items-center gap-2.5 justify-center sm:justify-start hover:text-accent-cyan transition-colors cursor-pointer lg:cursor-none"
               >
                 <span className="w-7 h-7 rounded-md bg-white/[0.04] border border-white/10 flex items-center justify-center group-hover:border-accent-cyan group-hover:bg-accent-cyan/10 transition-colors">
                   <Phone className="w-3.5 h-3.5" />
                 </span>
                 +91 63044 34947
               </a>
-              <div className="flex items-center gap-2.5 justify-center md:justify-start text-dim">
+              <div className="flex items-center gap-2.5 justify-center sm:justify-start text-dim">
                 <span className="w-7 h-7 rounded-md bg-white/[0.04] border border-white/10 flex items-center justify-center">
                   <MapPin className="w-3.5 h-3.5" />
                 </span>

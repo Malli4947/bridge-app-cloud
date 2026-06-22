@@ -42,15 +42,17 @@ export default function Navigation() {
             e.preventDefault();
             handleScrollTo('#home');
           }}
-          className="flex items-center gap-2.5 font-display font-bold text-xl no-underline tracking-tight text-[#f4f4f8]"
+          className="flex items-center gap-2 sm:gap-2.5 font-display font-bold text-lg sm:text-xl no-underline tracking-tight text-[#f4f4f8]"
         >
           <img
             src="/MyImage.jpeg"
             alt="Mallikarjuna Rao Lattupalli"
-            className="w-9 h-9 rounded-full object-cover object-top border-2 border-accent-cyan/40 flex-shrink-0"
+            className="w-8 h-8 sm:w-9 sm:h-9 rounded-full object-cover object-top border-2 border-accent-cyan/40 flex-shrink-0"
           />
-          <span>
-            Mallikarjuna Rao<span className="gradient-text">.dev</span>
+          <span className="flex items-baseline gap-0">
+            <span className="hidden sm:inline">Mallikarjuna Rao</span>
+            <span className="sm:hidden">M. Rao</span>
+            <span className="gradient-text">.dev</span>
           </span>
         </a>
 

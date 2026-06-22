@@ -9,12 +9,12 @@ export default function Testimonials() {
     <section id="reviews" className="section-pad container-custom relative z-[2]">
       <SectionHeader num="07" title="Client" accent="reviews" />
 
-      <p className="text-muted text-base lg:text-lg max-w-2xl mb-12 -mt-8">
+      <p className="text-muted text-sm sm:text-base lg:text-lg max-w-2xl mb-10 sm:mb-12 -mt-6 sm:-mt-8">
         What clients say about working with me — direct feedback from the people behind the brands
         I designed and shipped.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-7">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-6 lg:gap-7">
         {testimonials.map((t, i) => (
           <ReviewCard key={t.key} testimonial={t} delay={i * 0.12} />
         ))}

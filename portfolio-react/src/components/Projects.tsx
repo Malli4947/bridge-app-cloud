@@ -8,12 +8,12 @@ export default function Projects() {
     <section id="projects" className="section-pad container-custom relative z-[2]">
       <SectionHeader num="05" title="Featured" accent="work" />
 
-      <p className="text-muted text-base lg:text-lg max-w-2xl mb-12 -mt-8">
+      <p className="text-muted text-sm sm:text-base lg:text-lg max-w-2xl mb-10 sm:mb-12 -mt-6 sm:-mt-8">
         End-to-end engineered mobile and backend systems serving real users — optimized for
         scalability, reliability, and business impact.
       </p>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 lg:gap-8">
         {projects.map((project, i) => (
           <ProjectCard key={project.key} project={project} delay={(i % 2) * 0.1} />
         ))}
@@ -38,7 +38,7 @@ function ProjectCard({ project, delay }: CardProps) {
       className="group bg-bg-card border border-white/10 rounded-3xl overflow-hidden transition-all duration-500 hover:border-accent-cyan/30 hover:shadow-[0_30px_60px_rgba(6,212,212,0.1)] flex flex-col h-full"
     >
       <div
-        className="relative h-32 flex items-center px-7 lg:px-8 overflow-hidden"
+        className="relative h-28 sm:h-32 flex items-center px-5 sm:px-7 lg:px-8 overflow-hidden"
         style={{ background: project.bg }}
       >
         <div
@@ -66,7 +66,7 @@ function ProjectCard({ project, delay }: CardProps) {
         </div>
       </div>
 
-      <div className="p-7 lg:p-8 flex flex-col flex-1">
+      <div className="p-5 sm:p-7 lg:p-8 flex flex-col flex-1">
         <p className="text-accent-amber text-sm font-semibold mb-4 flex items-center gap-2">
           <span className="w-1 h-4 bg-accent-amber rounded-full" />
           {project.role}
@@ -78,16 +78,31 @@ function ProjectCard({ project, delay }: CardProps) {
           <h4 className="font-mono text-[0.7rem] uppercase tracking-[0.15em] text-dim mb-3">
             Key Highlights
           </h4>
-          <ul className="space-y-2.5">
-            {project.features.map((feature, i) => (
-              <li key={i} className="flex gap-3 text-sm leading-relaxed">
-                <span className="w-2 h-2 bg-accent-amber rounded-full mt-1.5 flex-shrink-0 shadow-[0_0_8px_rgba(251,191,36,0.5)]" />
-                <span className="text-muted">
-                  <strong className="text-[#f4f4f8] font-semibold">{feature.title}:</strong>{' '}
-                  {feature.desc}
-                </span>
-              </li>
-            ))}
+          <ul className="space-y-2">
+            {project.features.map((feature, i) => {
+              const isImpact = /\d+%|\d+x|boost|faster|improved|accuracy/i.test(feature.desc);
+              return (
+                <li key={i}>
+                  {isImpact ? (
+                    <div className="flex items-start gap-2.5 p-2.5 rounded-lg bg-accent-cyan/[0.06] border border-accent-cyan/20">
+                      <span className="font-mono text-accent-cyan text-[0.75rem] font-bold flex-shrink-0 mt-0.5">▲</span>
+                      <span className="text-sm leading-relaxed">
+                        <strong className="text-accent-cyan font-semibold">{feature.title}:</strong>{' '}
+                        <span className="text-[#f4f4f8]">{feature.desc}</span>
+                      </span>
+                    </div>
+                  ) : (
+                    <div className="flex gap-3 text-sm leading-relaxed">
+                      <span className="w-1.5 h-1.5 bg-accent-amber rounded-full mt-2 flex-shrink-0 shadow-[0_0_8px_rgba(251,191,36,0.5)]" />
+                      <span className="text-muted">
+                        <strong className="text-[#f4f4f8] font-semibold">{feature.title}:</strong>{' '}
+                        {feature.desc}
+                      </span>
+                    </div>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </div>
 

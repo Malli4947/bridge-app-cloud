@@ -6,9 +6,9 @@ export default {
       colors: {
         bg: {
           DEFAULT: '#0a0a0f',
-          elevated: '#12121a',
-          card: '#161620',
-          surface: '#1a1a26',
+          elevated: '#13131e',
+          card: '#18182a',
+          surface: '#1c1c2e',
         },
         accent: {
           cyan: '#06d4d4',
@@ -16,7 +16,7 @@ export default {
           amber: '#fbbf24',
           pink: '#ec4899',
         },
-        muted: '#9ca3af',
+        muted: '#b0b4c4',
         dim: '#6b7280',
       },
       fontFamily: {

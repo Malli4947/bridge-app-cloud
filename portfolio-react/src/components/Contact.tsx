@@ -1,6 +1,6 @@
 import { useState, FormEvent } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, Linkedin, Github, Send } from 'lucide-react';
+import { Mail, Phone, Linkedin, Github, Send, MessageCircle } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import SectionHeader from './SectionHeader';
 import { personalInfo } from '@/data/portfolio';
@@ -66,9 +66,9 @@ export default function Contact({ onShowToast }: Props) {
       id="contact"
       className="section-pad container-custom relative z-[2]"
     >
-      <SectionHeader num="06" title="Let's" accent="connect" />
+      <SectionHeader num="08" title="Let's" accent="connect" />
 
-      <div className="grid lg:grid-cols-2 gap-16">
+      <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -76,23 +76,27 @@ export default function Contact({ onShowToast }: Props) {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
           <h3
-            className="font-display font-bold leading-[1.15] mb-5 tracking-[-0.02em]"
+            className="font-display font-bold leading-[1.15] mb-4 tracking-[-0.02em]"
             style={{ fontSize: 'clamp(1.8rem, 4vw, 2.6rem)' }}
           >
-            Got a project in mind?
+            Have a project or role in mind?
             <br />
             <span className="gradient-text">Let's build something great.</span>
           </h3>
-          <p className="text-muted mb-8 text-[1.05rem] leading-[1.7]">
-            I'm currently available for full-time roles, freelance projects, and interesting collaborations.
-            Drop me a line — I respond within 24 hours.
+          <p className="text-muted mb-6 text-[1.05rem] leading-[1.7]">
+            Open to <strong className="text-[#f4f4f8] font-semibold">full-time roles</strong>,{' '}
+            <strong className="text-[#f4f4f8] font-semibold">freelance projects</strong>, and interesting
+            collaborations. I specialise in <strong className="text-accent-cyan font-semibold">React Native</strong>,{' '}
+            <strong className="text-accent-cyan font-semibold">React.js</strong>, and{' '}
+            <strong className="text-accent-cyan font-semibold">Node.js / MERN Stack</strong> —{' '}
+            drop me a line and I'll respond within 24 hours.
           </p>
 
-          {/* Always available banner */}
+          {/* Availability banner */}
           <div className="flex items-center gap-3 px-4 py-3 mb-6 rounded-xl bg-emerald-500/[0.07] border border-emerald-500/20">
             <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 flex-shrink-0 shadow-[0_0_8px_rgba(52,211,153,0.6)] animate-pulse" />
             <p className="text-sm text-emerald-300 leading-snug">
-              <strong>Available for Full-Time &amp; Freelance</strong> — feel free to connect anytime via Email, LinkedIn, or GitHub.
+              <strong>Open to Work · Full-Time &amp; Freelance</strong> — Hyderabad · Remote Ready · IST timezone
             </p>
           </div>
 
@@ -102,6 +106,13 @@ export default function Contact({ onShowToast }: Props) {
               label="Email"
               value={personalInfo.email}
               icon={<Mail size={22} />}
+            />
+            <ContactMethod
+              href={personalInfo.whatsapp}
+              label="WhatsApp"
+              value="+91 63044 34947"
+              icon={<MessageCircle size={22} />}
+              external
             />
             <ContactMethod
               href={`tel:${personalInfo.phone}`}
@@ -132,7 +143,7 @@ export default function Contact({ onShowToast }: Props) {
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
           onSubmit={handleSubmit}
-          className="flex flex-col gap-6 p-10 bg-bg-card border border-white/10 rounded-[20px]"
+          className="flex flex-col gap-5 sm:gap-6 p-5 sm:p-8 lg:p-10 bg-bg-card border border-white/10 rounded-[20px]"
         >
           <FormField label="Your Name"  name="from_name"    value={form.name}    onChange={handleChange('name')} />
           <FormField label="Your Email" name="reply_to"     value={form.email}   onChange={handleChange('email')} type="email" />
@@ -172,7 +183,7 @@ function ContactMethod({ href, label, value, icon, external }: ContactMethodProp
     <a
       href={href}
       {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-      className="flex items-center gap-4 p-5 bg-bg-card border border-white/10 rounded-xl no-underline text-[#f4f4f8] transition-all hover:border-accent-cyan hover:translate-x-2 hover:bg-accent-cyan/[0.03]"
+      className="flex items-center gap-3 sm:gap-4 p-4 sm:p-5 bg-bg-card border border-white/10 rounded-xl no-underline text-[#f4f4f8] transition-all hover:border-accent-cyan sm:hover:translate-x-2 hover:bg-accent-cyan/[0.03]"
     >
       <div className="w-11 h-11 flex items-center justify-center bg-accent-cyan/10 rounded-[10px] text-accent-cyan flex-shrink-0">
         {icon}

@@ -9,13 +9,13 @@ export default function FreelanceProjects() {
     <section id="freelance" className="section-pad container-custom relative z-[2]">
       <SectionHeader num="06" title="Freelance" accent="projects" />
 
-      <p className="text-muted text-base lg:text-lg max-w-2xl mb-12 -mt-8">
+      <p className="text-muted text-sm sm:text-base lg:text-lg max-w-2xl mb-10 sm:mb-12 -mt-6 sm:-mt-8">
         Independent client work and self-initiated product builds —{' '}
         <strong className="text-[#f4f4f8]">my own design and my own code</strong>, owned end to end
         from the first wireframe to a production-ready deployment. Every site below is live.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-7">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-7">
         {freelanceProjects.map((project, i) => (
           <FreelanceCard key={project.key} project={project} delay={(i % 3) * 0.1} />
         ))}

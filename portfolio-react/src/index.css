@@ -21,6 +21,9 @@
     body {
       cursor: auto;
     }
+    a, button, [role="button"], input, textarea, select, label[for] {
+      cursor: pointer;
+    }
   }
 
   ::selection {
@@ -53,16 +56,16 @@
   }
 
   .section-pad {
-    padding: clamp(4rem, 10vw, 8rem) clamp(1rem, 4vw, 3rem);
+    padding: clamp(3rem, 8vw, 7rem) clamp(1rem, 4vw, 3rem);
   }
 
   .container-custom {
-    max-width: min(1280px, 92vw);
+    max-width: min(1280px, 94vw);
     @apply mx-auto;
   }
 
   .btn {
-    @apply inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-display font-semibold text-[0.95rem] no-underline cursor-none border-none relative overflow-hidden transition-all duration-300;
+    @apply inline-flex items-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full font-display font-semibold text-[0.9rem] sm:text-[0.95rem] no-underline cursor-pointer lg:cursor-none border-none relative overflow-hidden transition-all duration-300;
   }
 
   .btn-primary {

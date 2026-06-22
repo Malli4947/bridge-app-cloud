@@ -21,12 +21,28 @@ export default function Skills() {
     <section id="skills" className="section-pad container-custom relative z-[2]">
       <SectionHeader num="03" title="Tech" accent="stack" />
 
-      <p className="text-muted text-base lg:text-lg max-w-2xl mb-12 -mt-8">
-        A comprehensive toolkit for building modern mobile applications, scalable backend services,
-        and production-ready experiences.
+      <p className="text-muted text-sm sm:text-base lg:text-lg max-w-2xl mb-8 -mt-6 sm:-mt-8">
+        A full-stack toolkit for shipping production-grade mobile apps, web platforms, and REST APIs —
+        from architecture to App Store deployment.
       </p>
 
-      <div className="grid lg:grid-cols-3 gap-6 mb-8">
+      {/* Primary stack highlight */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-80px' }}
+        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+        className="flex flex-wrap gap-2 mb-8 sm:mb-10 p-4 sm:p-5 rounded-2xl bg-bg-card border border-white/10"
+      >
+        <span className="font-mono text-[0.65rem] uppercase tracking-[0.12em] text-dim self-center mr-2 flex-shrink-0">Primary Stack:</span>
+        {['React Native', 'React.js', 'TypeScript', 'Node.js', 'Express.js', 'MongoDB', 'Firebase', 'REST APIs'].map((tech) => (
+          <span key={tech} className="px-3 py-1 bg-accent-cyan/10 border border-accent-cyan/30 text-accent-cyan text-sm font-mono rounded-full">
+            {tech}
+          </span>
+        ))}
+      </motion.div>
+
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 mb-8">
         {skillCategories.map((cat, i) => (
           <SkillCategoryCard key={cat.category} category={cat} delay={i * 0.08} />
         ))}
@@ -47,7 +63,7 @@ function SkillCategoryCard({ category, delay }: { category: SkillCategory; delay
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-80px' }}
       transition={{ duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] }}
-      className="group relative p-6 lg:p-8 bg-bg-card border border-white/10 rounded-3xl overflow-hidden transition-all duration-400 hover:border-accent-cyan/40 hover:shadow-[0_20px_50px_rgba(6,212,212,0.08)]"
+      className="group relative p-5 sm:p-6 lg:p-8 bg-bg-card border border-white/10 rounded-3xl overflow-hidden transition-all duration-400 hover:border-accent-cyan/40 hover:shadow-[0_20px_50px_rgba(6,212,212,0.08)]"
     >
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-1 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
 
@@ -59,7 +75,7 @@ function SkillCategoryCard({ category, delay }: { category: SkillCategory; delay
         <div className="flex-1 h-px bg-white/10" />
       </div>
 
-      <div className="grid grid-cols-4 gap-3">
+      <div className="grid grid-cols-3 xs:grid-cols-4 gap-2 sm:gap-3">
         {category.skills.map((skill, i) => (
           <SkillIconTile key={skill.name + i} skill={skill} delay={delay + i * 0.04} />
         ))}
@@ -124,7 +140,7 @@ function DevPracticesCard() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-80px' }}
       transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-      className="group relative p-6 lg:p-8 bg-bg-card border border-white/10 rounded-3xl overflow-hidden transition-all duration-400 hover:border-accent-purple/40 hover:shadow-[0_20px_50px_rgba(168,85,247,0.08)]"
+      className="group relative p-5 sm:p-6 lg:p-8 bg-bg-card border border-white/10 rounded-3xl overflow-hidden transition-all duration-400 hover:border-accent-purple/40 hover:shadow-[0_20px_50px_rgba(168,85,247,0.08)]"
     >
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-1 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
 
@@ -136,7 +152,7 @@ function DevPracticesCard() {
         <div className="flex-1 h-px bg-white/10" />
       </div>
 
-      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-4">
+      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-7 gap-3 sm:gap-4">
         {devPractices.map((practice, i) => (
           <SkillIconTile
             key={practice.name + i}
